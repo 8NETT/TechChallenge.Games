@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "NGDSug5ShA4=",
+  "dgSpecHash": "H9LMH8x6VyM=",
   "success": true,
   "projectFilePath": "/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Core/TechChallenge.Games.Core.csproj",
   "expectedPackageFiles": [
+    "/Users/rayanlima/.nuget/packages/elastic.clients.elasticsearch/8.19.4/elastic.clients.elasticsearch.8.19.4.nupkg.sha512",
+    "/Users/rayanlima/.nuget/packages/elastic.transport/0.10.1/elastic.transport.0.10.1.nupkg.sha512",
     "/Users/rayanlima/.nuget/packages/fluentvalidation/12.0.0/fluentvalidation.12.0.0.nupkg.sha512",
     "/Users/rayanlima/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/9.0.9/microsoft.aspnetcore.authentication.jwtbearer.9.0.9.nupkg.sha512",
     "/Users/rayanlima/.nuget/packages/microsoft.aspnetcore.openapi/9.0.9/microsoft.aspnetcore.openapi.9.0.9.nupkg.sha512",
+    "/Users/rayanlima/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/rayanlima/.nuget/packages/microsoft.entityframeworkcore/9.0.9/microsoft.entityframeworkcore.9.0.9.nupkg.sha512",
     "/Users/rayanlima/.nuget/packages/microsoft.entityframeworkcore.abstractions/9.0.9/microsoft.entityframeworkcore.abstractions.9.0.9.nupkg.sha512",
     "/Users/rayanlima/.nuget/packages/microsoft.entityframeworkcore.analyzers/9.0.9/microsoft.entityframeworkcore.analyzers.9.0.9.nupkg.sha512",

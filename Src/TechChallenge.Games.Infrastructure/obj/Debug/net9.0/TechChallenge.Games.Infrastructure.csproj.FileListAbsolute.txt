@@ -15,3 +15,6 @@
 /Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Infrastructure/obj/Debug/net9.0/TechChallenge.Games.Infrastructure.pdb
 /Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Infrastructure/obj/Debug/net9.0/TechChallenge.Games.Infrastructure.genruntimeconfig.cache
 /Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Infrastructure/obj/Debug/net9.0/ref/TechChallenge.Games.Infrastructure.dll
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Infrastructure/obj/Debug/net9.0/TechChallenge.Games.Infrastructure.sourcelink.json
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Infrastructure/bin/Debug/net9.0/TechChallenge.Games.Application.dll
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Infrastructure/bin/Debug/net9.0/TechChallenge.Games.Application.pdb

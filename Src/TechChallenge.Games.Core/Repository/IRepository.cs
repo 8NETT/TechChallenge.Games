@@ -9,4 +9,5 @@ public interface IRepository<T> where T : EntityBase
     void Cadastrar(T entidade);
     void Alterar(T entidade);
     void Deletar(T entidade);
+    IQueryable<T> Query();
 }

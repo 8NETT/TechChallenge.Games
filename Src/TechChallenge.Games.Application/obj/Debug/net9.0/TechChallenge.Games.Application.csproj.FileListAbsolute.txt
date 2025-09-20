@@ -13,3 +13,4 @@
 /Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Application/obj/Debug/net9.0/refint/TechChallenge.Games.Application.dll
 /Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Application/obj/Debug/net9.0/TechChallenge.Games.Application.pdb
 /Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Application/obj/Debug/net9.0/ref/TechChallenge.Games.Application.dll
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Application/obj/Debug/net9.0/TechChallenge.Games.Application.sourcelink.json

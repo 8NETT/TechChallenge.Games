@@ -29,4 +29,6 @@ public class EFRepository<T> : IRepository<T> where T : EntityBase
 
     public void Deletar(T entidade) =>
         _dbSet.Remove(entidade);
+
+    public IQueryable<T> Query() => _dbSet.AsQueryable();
 }

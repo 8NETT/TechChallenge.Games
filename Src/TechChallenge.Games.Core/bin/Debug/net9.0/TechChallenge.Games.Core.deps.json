@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v9.0": {
       "TechChallenge.Games.Core/1.0.0": {
         "dependencies": {
+          "Elastic.Clients.Elasticsearch": "8.19.4",
           "FluentValidation": "12.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "9.0.9",
           "Microsoft.AspNetCore.OpenApi": "9.0.9",
@@ -22,6 +23,28 @@
         },
         "runtime": {
           "TechChallenge.Games.Core.dll": {}
+        }
+      },
+      "Elastic.Clients.Elasticsearch/8.19.4": {
+        "dependencies": {
+          "Elastic.Transport": "0.10.1"
+        },
+        "runtime": {
+          "lib/net9.0/Elastic.Clients.Elasticsearch.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.19.4.0"
+          }
+        }
+      },
+      "Elastic.Transport/0.10.1": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "runtime": {
+          "lib/net8.0/Elastic.Transport.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.10.1.0"
+          }
         }
       },
       "FluentValidation/12.0.0": {
@@ -54,6 +77,7 @@
           }
         }
       },
+      "Microsoft.CSharp/4.7.0": {},
       "Microsoft.EntityFrameworkCore/9.0.9": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Abstractions": "9.0.9",
@@ -463,6 +487,20 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Elastic.Clients.Elasticsearch/8.19.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TIvXyAuTU4xcfDe32vESmVNaTvGWpsdCpqPuuMpvKiUk8OndqNXN2I2Akxy64EEChXsnXawIzhgAP+Ocn4I7cw==",
+      "path": "elastic.clients.elasticsearch/8.19.4",
+      "hashPath": "elastic.clients.elasticsearch.8.19.4.nupkg.sha512"
+    },
+    "Elastic.Transport/0.10.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8qUyxd4LzMiR+wtNEzdHHnu+iEpbKfoA001NyYgZZT0YZaNE9fWmFeZMxcTz7HMcYUidZSeT6vvongjZh1j/hQ==",
+      "path": "elastic.transport/0.10.1",
+      "hashPath": "elastic.transport.0.10.1.nupkg.sha512"
+    },
     "FluentValidation/12.0.0": {
       "type": "package",
       "serviceable": true,
@@ -483,6 +521,13 @@
       "sha512": "sha512-3Sina0gS/CTYt9XG6DUFPdXOmJui7e551U0kO2bIiDk3vZ2sctxxenN+cE1a5CrUpjIVZfZr32neWYYRO+Piaw==",
       "path": "microsoft.aspnetcore.openapi/9.0.9",
       "hashPath": "microsoft.aspnetcore.openapi.9.0.9.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore/9.0.9": {
       "type": "package",

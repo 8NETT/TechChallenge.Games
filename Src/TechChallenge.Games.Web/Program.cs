@@ -1,5 +1,8 @@
+using Elastic.Clients.Elasticsearch;
 using TechChallenge.Games.Endpoints;
+using TechChallenge.Games.Infrastructure.Configurations;
 using TechChallenge.Games.Web.Configurations;
+using TechChallenge.Games.Web.Endpoints;
 using TechChallenge.Games.Web.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,5 +32,12 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapJogoEndpoints();
+app.MapSearchEndpoints();
+
+using (var scope = app.Services.CreateScope())
+{
+    var es = scope.ServiceProvider.GetRequiredService<ElasticsearchClient>();
+    await ElasticSetup.EnsureJogosIndexAsync(es);
+}
 
 app.Run();

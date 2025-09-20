@@ -10,3 +10,4 @@
 /Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Core/obj/Debug/net9.0/refint/TechChallenge.Games.Core.dll
 /Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Core/obj/Debug/net9.0/TechChallenge.Games.Core.pdb
 /Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Core/obj/Debug/net9.0/ref/TechChallenge.Games.Core.dll
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Core/obj/Debug/net9.0/TechChallenge.Games.Core.sourcelink.json

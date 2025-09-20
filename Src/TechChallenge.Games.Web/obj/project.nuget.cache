@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8z1FIvWmCPU=",
+  "dgSpecHash": "tcg2uw45BuM=",
   "success": true,
   "projectFilePath": "/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Web/TechChallenge.Games.Web.csproj",
   "expectedPackageFiles": [
@@ -8,10 +8,13 @@
     "/Users/rayanlima/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/Users/rayanlima/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",
     "/Users/rayanlima/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
+    "/Users/rayanlima/.nuget/packages/elastic.clients.elasticsearch/8.19.4/elastic.clients.elasticsearch.8.19.4.nupkg.sha512",
+    "/Users/rayanlima/.nuget/packages/elastic.transport/0.10.1/elastic.transport.0.10.1.nupkg.sha512",
     "/Users/rayanlima/.nuget/packages/fluentvalidation/12.0.0/fluentvalidation.12.0.0.nupkg.sha512",
     "/Users/rayanlima/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/9.0.9/microsoft.aspnetcore.authentication.jwtbearer.9.0.9.nupkg.sha512",
     "/Users/rayanlima/.nuget/packages/microsoft.aspnetcore.openapi/9.0.9/microsoft.aspnetcore.openapi.9.0.9.nupkg.sha512",
     "/Users/rayanlima/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
+    "/Users/rayanlima/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/rayanlima/.nuget/packages/microsoft.data.sqlclient/5.1.6/microsoft.data.sqlclient.5.1.6.nupkg.sha512",
     "/Users/rayanlima/.nuget/packages/microsoft.data.sqlclient.sni.runtime/5.1.1/microsoft.data.sqlclient.sni.runtime.5.1.1.nupkg.sha512",
     "/Users/rayanlima/.nuget/packages/microsoft.entityframeworkcore/9.0.9/microsoft.entityframeworkcore.9.0.9.nupkg.sha512",

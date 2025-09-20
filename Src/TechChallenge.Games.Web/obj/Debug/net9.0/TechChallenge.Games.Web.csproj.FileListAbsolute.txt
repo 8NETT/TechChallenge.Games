@@ -103,3 +103,6 @@
 /Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Web/obj/Debug/net9.0/TechChallenge.Games.Web.pdb
 /Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Web/obj/Debug/net9.0/TechChallenge.Games.Web.genruntimeconfig.cache
 /Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Web/obj/Debug/net9.0/ref/TechChallenge.Games.Web.dll
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Web/bin/Debug/net9.0/Elastic.Clients.Elasticsearch.dll
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Web/bin/Debug/net9.0/Elastic.Transport.dll
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Web/obj/Debug/net9.0/TechChallenge.Games.Web.sourcelink.json

@@ -65,3 +65,97 @@ WHERE [j].[Id] = @__id_0
 2025-09-20 17:00:09.382 -03:00 [INF] Executed endpoint 'HTTP: GET /jogo/{id:int}'
 2025-09-20 17:00:09.382 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/jogo/2 - 200 null application/json; charset=utf-8 189.5339ms
 2025-09-20 17:00:20.102 -03:00 [INF] Application is shutting down...
+2025-09-20 18:55:17.613 -03:00 [INF] User profile is available. Using '/Users/rayanlima/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-09-20 18:55:18.264 -03:00 [INF] Now listening on: https://localhost:7016
+2025-09-20 18:55:18.267 -03:00 [INF] Now listening on: http://localhost:5124
+2025-09-20 18:55:18.273 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-20 18:55:18.273 -03:00 [INF] Hosting environment: Development
+2025-09-20 18:55:18.273 -03:00 [INF] Content root path: /Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Web
+2025-09-20 18:55:30.266 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/ - null null
+2025-09-20 18:55:30.374 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/ - 404 0 null 109.6201ms
+2025-09-20 18:55:30.389 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7016/, Response status code: 404
+2025-09-20 18:55:35.377 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - null null
+2025-09-20 18:55:35.397 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-09-20 18:55:35.502 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 124.856ms
+2025-09-20 18:55:43.606 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7016/search/reindex - application/json 2
+2025-09-20 18:55:43.614 -03:00 [INF] Executing endpoint 'HTTP: POST /search/reindex'
+2025-09-20 18:55:43.650 -03:00 [INF] Executed endpoint 'HTTP: POST /search/reindex'
+2025-09-20 18:55:43.699 -03:00 [ERR] Unhandled exception for request POST /search/reindex
+System.InvalidOperationException: Each parameter in the deserialization constructor on type 'TechChallenge.Games.Infrastructure.Search.JogoIndexer' must bind to an object property or field on deserialization. Each parameter name must match with a property or field on the object. Fields are only considered when 'JsonSerializerOptions.IncludeFields' is enabled. The match can be case-insensitive.
+   at System.Text.Json.ThrowHelper.ThrowInvalidOperationException_ConstructorParameterIncompleteBinding(Type parentType)
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.ContinueDeserialize(ReadBufferState& bufferState, JsonReaderState& jsonReaderState, ReadStack& readStack, T& value)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsObjectAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.HttpRequestJsonExtensions.ReadFromJsonAsync(HttpRequest request, JsonTypeInfo jsonTypeInfo, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.HttpRequestJsonExtensions.ReadFromJsonAsync(HttpRequest request, JsonTypeInfo jsonTypeInfo, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<HandleRequestBodyAndCompileRequestDelegateForJson>g__TryReadBodyAsync|101_0(HttpContext httpContext, Type bodyType, String parameterTypeName, String parameterName, Boolean allowEmptyRequestBody, Boolean throwOnBadRequest, JsonTypeInfo jsonTypeInfo)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass101_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at TechChallenge.Games.Web.Middleware.ErroMiddleware.InvokeAsync(HttpContext context) in /Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Web/Middleware/ErroMiddleware.cs:line 20
+2025-09-20 18:55:43.729 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7016/search/reindex - 500 null application/json 123.0605ms
+2025-09-20 18:57:00.992 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7016/search/reindex - application/json 2
+2025-09-20 18:57:01.001 -03:00 [INF] Executing endpoint 'HTTP: POST /search/reindex'
+2025-09-20 18:57:01.004 -03:00 [INF] Executed endpoint 'HTTP: POST /search/reindex'
+2025-09-20 18:57:01.056 -03:00 [ERR] Unhandled exception for request POST /search/reindex
+System.InvalidOperationException: Each parameter in the deserialization constructor on type 'TechChallenge.Games.Infrastructure.Search.JogoIndexer' must bind to an object property or field on deserialization. Each parameter name must match with a property or field on the object. Fields are only considered when 'JsonSerializerOptions.IncludeFields' is enabled. The match can be case-insensitive.
+   at System.Text.Json.ThrowHelper.ThrowInvalidOperationException_ConstructorParameterIncompleteBinding(Type parentType)
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.ContinueDeserialize(ReadBufferState& bufferState, JsonReaderState& jsonReaderState, ReadStack& readStack, T& value)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsObjectAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.HttpRequestJsonExtensions.ReadFromJsonAsync(HttpRequest request, JsonTypeInfo jsonTypeInfo, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.HttpRequestJsonExtensions.ReadFromJsonAsync(HttpRequest request, JsonTypeInfo jsonTypeInfo, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<HandleRequestBodyAndCompileRequestDelegateForJson>g__TryReadBodyAsync|101_0(HttpContext httpContext, Type bodyType, String parameterTypeName, String parameterName, Boolean allowEmptyRequestBody, Boolean throwOnBadRequest, JsonTypeInfo jsonTypeInfo)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass101_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at TechChallenge.Games.Web.Middleware.ErroMiddleware.InvokeAsync(HttpContext context) in /Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Web/Middleware/ErroMiddleware.cs:line 20
+2025-09-20 18:57:01.058 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7016/search/reindex - 500 null application/json 66.4187ms
+2025-09-20 19:01:31.078 -03:00 [INF] User profile is available. Using '/Users/rayanlima/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-09-20 19:01:31.675 -03:00 [INF] Now listening on: https://localhost:7016
+2025-09-20 19:01:31.676 -03:00 [INF] Now listening on: http://localhost:5124
+2025-09-20 19:01:31.677 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-20 19:01:31.677 -03:00 [INF] Hosting environment: Development
+2025-09-20 19:01:31.678 -03:00 [INF] Content root path: /Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Web
+2025-09-20 19:01:39.071 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7016/search/reindex - application/json 2
+2025-09-20 19:01:39.171 -03:00 [INF] Executing endpoint 'HTTP: POST /search/reindex'
+2025-09-20 19:08:03.158 -03:00 [INF] User profile is available. Using '/Users/rayanlima/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-09-20 19:08:03.245 -03:00 [INF] Application is shutting down...
+2025-09-20 19:08:03.408 -03:00 [ERR] Hosting failed to start
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-09-20 19:09:36.651 -03:00 [INF] User profile is available. Using '/Users/rayanlima/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-09-20 19:09:37.220 -03:00 [INF] Now listening on: https://localhost:7016
+2025-09-20 19:09:37.221 -03:00 [INF] Now listening on: http://localhost:5124
+2025-09-20 19:09:37.222 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-20 19:09:37.223 -03:00 [INF] Hosting environment: Development
+2025-09-20 19:09:37.223 -03:00 [INF] Content root path: /Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Web
+2025-09-20 19:09:50.002 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7016/search/reindex - application/json 2
+2025-09-20 19:09:50.094 -03:00 [INF] Executing endpoint 'HTTP: POST /search/reindex'
+2025-09-20 19:09:54.988 -03:00 [WRN] No instantiatable types implementing `IEntityTypeConfiguration` were found while while scanning assembly 'System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e'.
+2025-09-20 19:09:55.100 -03:00 [WRN] No store type was specified for the decimal property 'Valor' on entity type 'Jogo'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-20 19:09:55.943 -03:00 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [j].[Id], [j].[DataCriacao], [j].[Desconto], [j].[Descricao], [j].[Nome], [j].[Valor]
+FROM [Jogo] AS [j]
+2025-09-20 19:10:26.741 -03:00 [INF] Setting HTTP status code 200.
+2025-09-20 19:10:26.761 -03:00 [INF] Writing value of type '<>f__AnonymousType1`1' as Json.
+2025-09-20 19:10:26.765 -03:00 [INF] Executed endpoint 'HTTP: POST /search/reindex'
+2025-09-20 19:10:26.784 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7016/search/reindex - 200 null application/json; charset=utf-8 36783.1111ms
