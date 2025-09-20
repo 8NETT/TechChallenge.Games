@@ -1,0 +1,12 @@
+# .dockerignore
+
+# Ignore bin and obj folders recursively
+**/bin
+**/obj
+
+# Ignore other common files not needed in the build
+.git
+.vs
+.vscode
+*.user
+*.suo
