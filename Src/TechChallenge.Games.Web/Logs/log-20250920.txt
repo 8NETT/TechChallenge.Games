@@ -1,0 +1,67 @@
+2025-09-20 16:58:29.381 -03:00 [INF] User profile is available. Using '/Users/rayanlima/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-09-20 16:58:29.921 -03:00 [INF] Now listening on: https://localhost:7016
+2025-09-20 16:58:29.921 -03:00 [INF] Now listening on: http://localhost:5124
+2025-09-20 16:58:29.922 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-20 16:58:29.922 -03:00 [INF] Hosting environment: Development
+2025-09-20 16:58:29.922 -03:00 [INF] Content root path: /Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Web
+2025-09-20 16:58:51.822 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/ - null null
+2025-09-20 16:58:51.890 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/ - 404 0 null 68.95ms
+2025-09-20 16:58:51.907 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7016/, Response status code: 404
+2025-09-20 16:59:07.223 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger - null null
+2025-09-20 16:59:07.230 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger - 301 0 null 7.673ms
+2025-09-20 16:59:07.235 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.html - null null
+2025-09-20 16:59:07.287 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.html - 200 null text/html;charset=utf-8 52.9418ms
+2025-09-20 16:59:07.299 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui.css - null null
+2025-09-20 16:59:07.302 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.css - null null
+2025-09-20 16:59:07.302 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui-standalone-preset.js - null null
+2025-09-20 16:59:07.302 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.js - null null
+2025-09-20 16:59:07.302 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui-bundle.js - null null
+2025-09-20 16:59:07.304 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.js - 200 null application/javascript;charset=utf-8 1.7996ms
+2025-09-20 16:59:07.344 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.css - 200 152 text/css 42.0251ms
+2025-09-20 16:59:07.353 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui-standalone-preset.js - 200 70860 text/javascript 51.5707ms
+2025-09-20 16:59:07.354 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui.css - 200 23647 text/css 54.0293ms
+2025-09-20 16:59:07.354 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui-bundle.js - 200 417980 text/javascript 52.0174ms
+2025-09-20 16:59:07.518 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - null null
+2025-09-20 16:59:07.530 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-09-20 16:59:07.544 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/favicon-32x32.png - null null
+2025-09-20 16:59:07.545 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/favicon-32x32.png - 200 628 image/png 0.8604ms
+2025-09-20 16:59:07.605 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 86.5105ms
+2025-09-20 16:59:14.169 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/jogo - null null
+2025-09-20 16:59:14.175 -03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-09-20 16:59:14.179 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-09-20 16:59:14.179 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/jogo - 401 0 null 9.9166ms
+2025-09-20 16:59:28.544 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/jogo - null null
+2025-09-20 16:59:28.610 -03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '20/09/2025 19:00:38', Current time (UTC): '20/09/2025 19:59:28'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-09-20 16:59:28.622 -03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '20/09/2025 19:00:38', Current time (UTC): '20/09/2025 19:59:28'.
+2025-09-20 16:59:28.623 -03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-09-20 16:59:28.623 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-09-20 16:59:28.623 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/jogo - 401 0 null 80.2012ms
+2025-09-20 16:59:58.663 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/jogo - null null
+2025-09-20 16:59:58.690 -03:00 [INF] Executing endpoint 'HTTP: GET /jogo/'
+2025-09-20 16:59:58.947 -03:00 [WRN] No instantiatable types implementing `IEntityTypeConfiguration` were found while while scanning assembly 'System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e'.
+2025-09-20 16:59:59.027 -03:00 [WRN] No store type was specified for the decimal property 'Valor' on entity type 'Jogo'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-20 16:59:59.410 -03:00 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [j].[Id], [j].[DataCriacao], [j].[Desconto], [j].[Descricao], [j].[Nome], [j].[Valor]
+FROM [Jogo] AS [j]
+2025-09-20 16:59:59.458 -03:00 [INF] Setting HTTP status code 200.
+2025-09-20 16:59:59.461 -03:00 [INF] Writing value of type 'ArraySelectIterator`2' as Json.
+2025-09-20 16:59:59.467 -03:00 [INF] Executed endpoint 'HTTP: GET /jogo/'
+2025-09-20 16:59:59.470 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/jogo - 200 null application/json; charset=utf-8 807.9837ms
+2025-09-20 17:00:09.193 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/jogo/2 - null null
+2025-09-20 17:00:09.195 -03:00 [INF] Executing endpoint 'HTTP: GET /jogo/{id:int}'
+2025-09-20 17:00:09.379 -03:00 [INF] Executed DbCommand (73ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [j].[Id], [j].[DataCriacao], [j].[Desconto], [j].[Descricao], [j].[Nome], [j].[Valor]
+FROM [Jogo] AS [j]
+WHERE [j].[Id] = @__id_0
+2025-09-20 17:00:09.381 -03:00 [INF] Setting HTTP status code 200.
+2025-09-20 17:00:09.381 -03:00 [INF] Writing value of type 'JogoDTO' as Json.
+2025-09-20 17:00:09.382 -03:00 [INF] Executed endpoint 'HTTP: GET /jogo/{id:int}'
+2025-09-20 17:00:09.382 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/jogo/2 - 200 null application/json; charset=utf-8 189.5339ms
+2025-09-20 17:00:20.102 -03:00 [INF] Application is shutting down...

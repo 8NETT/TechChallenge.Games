@@ -1,0 +1,15 @@
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Application/bin/Debug/net9.0/TechChallenge.Games.Application.deps.json
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Application/bin/Debug/net9.0/TechChallenge.Games.Application.dll
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Application/bin/Debug/net9.0/TechChallenge.Games.Application.pdb
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Application/bin/Debug/net9.0/TechChallenge.Games.Core.dll
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Application/bin/Debug/net9.0/TechChallenge.Games.Core.pdb
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Application/obj/Debug/net9.0/TechChallenge.Games.Application.csproj.AssemblyReference.cache
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Application/obj/Debug/net9.0/TechChallenge.Games.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Application/obj/Debug/net9.0/TechChallenge.Games.Application.AssemblyInfoInputs.cache
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Application/obj/Debug/net9.0/TechChallenge.Games.Application.AssemblyInfo.cs
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Application/obj/Debug/net9.0/TechChallenge.Games.Application.csproj.CoreCompileInputs.cache
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Application/obj/Debug/net9.0/TechChal.455F6A5C.Up2Date
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Application/obj/Debug/net9.0/TechChallenge.Games.Application.dll
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Application/obj/Debug/net9.0/refint/TechChallenge.Games.Application.dll
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Application/obj/Debug/net9.0/TechChallenge.Games.Application.pdb
+/Users/rayanlima/Developer/TechChallenge/TechChallenge.Games/Src/TechChallenge.Games.Application/obj/Debug/net9.0/ref/TechChallenge.Games.Application.dll
