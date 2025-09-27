@@ -44,4 +44,10 @@ CORECLR_PROFILER_PATH=/usr/local/newrelic-dotnet-agent/libNewRelicProfiler.so
 WORKDIR /app
 COPY --from=build-env /app/publish .
 
+# Force ASP.NET Core to listen on port 8081
+ENV ASPNETCORE_URLS=http://+:8081
+
+# Expose port 8081 so Azure Container Apps ingress can connect
+EXPOSE 8081
+
 ENTRYPOINT ["dotnet", "TechChallenge.Games.dll"]
