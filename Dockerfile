@@ -15,7 +15,7 @@ RUN dotnet restore "TechChallenge.Games.sln"
 COPY . ./
 
 # Run tests
-RUN dotnet test "TechChallenge.Games.Testes/TechChallenge.Games.Testes.csproj" --no-restore --verbosity normal
+RUN dotnet test --no-restore --verbosity minimal
 
 # Build the application
 RUN dotnet publish "Src/TechChallenge.Games.Web/TechChallenge.Games.Web.csproj" -c Release -o /app/publish
