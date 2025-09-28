@@ -7,18 +7,15 @@ COPY ["Src/TechChallenge.Games.Web/TechChallenge.Games.Web.csproj", "Src/TechCha
 COPY ["Src/TechChallenge.Games.Core/TechChallenge.Games.Core.csproj", "Src/TechChallenge.Games.Core/"]
 COPY ["Src/TechChallenge.Games.Infrastructure/TechChallenge.Games.Infrastructure.csproj", "Src/TechChallenge.Games.Infrastructure/"]
 COPY ["Src/TechChallenge.Games.Application/TechChallenge.Games.Application.csproj", "Src/TechChallenge.Games.Application/"]
-# COPY ["tests/WebApiTests/WebApiTests.csproj", "tests/WebApiTests/"]
-# COPY ["tests/CoreTests/CoreTests.csproj", "tests/CoreTests/"]
-# COPY ["tests/ApplicationTests/ApplicationTests.csproj", "tests/ApplicationTests/"]
+COPY ["TechChallenge.Games.Testes/TechChallenge.Games.Testes.csproj", "TechChallenge.Games.Testes/"]
 
 RUN dotnet restore "TechChallenge.Games.sln"
 
 # Copy everything else and build
 COPY . ./
 
-# Run tests and coverage
-# Run all tests defined in the solution file
-# RUN dotnet test "TechChallenge.Games.sln" --no-restore --verbosity normal --collect:"XPlat Code Coverage"
+# Run tests
+RUN dotnet test "TechChallenge.Games.Testes/TechChallenge.Games.Testes.csproj" --no-restore --verbosity normal
 
 # Build the application
 RUN dotnet publish "Src/TechChallenge.Games.Web/TechChallenge.Games.Web.csproj" -c Release -o /app/publish
