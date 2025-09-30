@@ -5,15 +5,19 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>TechChallenge.Games.Web</RootNamespace>
+        <UserSecretsId>7bb22b06-447c-43d0-9bf4-e3f37f046647</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.9"/>
+        <PackageReference Include="Elastic.Clients.Elasticsearch" Version="9.1.9" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.9" />
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\TechChallenge.Games.Query.Domain\TechChallenge.Games.Query.Domain.csproj" />
+      <ProjectReference Include="..\..\TechChallenge.Games.Query.Infrastructure\TechChallenge.Games.Query.Infrastructure.csproj" />
       <ProjectReference Include="..\TechChallenge.Games.Application\TechChallenge.Games.Application.csproj" />
-      <ProjectReference Include="..\TechChallenge.Games.Infrastructure\TechChallenge.Games.Infrastructure.csproj" />
+      <ProjectReference Include="..\TechChallenge.Games.Command.Infrastructure\TechChallenge.Games.Command.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

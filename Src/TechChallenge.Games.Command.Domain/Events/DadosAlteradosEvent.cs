@@ -5,7 +5,6 @@
         public string? Nome { get; set; }
         public string? Descricao { get; set; }
         public DateTime? DataLancamento { get; set; }
-        public decimal? Preco { get; set; }
 
         public DadosAlteradosEvent() : base(nameof(DadosAlteradosEvent)) { }
     }

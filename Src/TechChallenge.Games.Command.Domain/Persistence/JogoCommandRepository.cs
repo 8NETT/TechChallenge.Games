@@ -2,16 +2,16 @@
 
 namespace TechChallenge.Games.Command.Domain.Persistence
 {
-    public sealed class JogoRepository : IDisposable
+    public sealed class JogoCommandRepository : IDisposable
     {
         private readonly IEventStore _eventStore;
 
-        public JogoRepository(IEventStore eventStore)
+        public JogoCommandRepository(IEventStore eventStore)
         {
             _eventStore = eventStore;
         }
 
-        public async Task<Jogo?> GetByIdAsync(Guid id)
+        public async Task<Jogo?> ObterPorIdAsync(Guid id)
         {
             var events = await _eventStore.GetEventsAsync(id);
 
@@ -24,7 +24,7 @@ namespace TechChallenge.Games.Command.Domain.Persistence
             return aggregate;
         }
 
-        public async Task SaveAsync(Jogo aggregate)
+        public async Task SalvarAsync(Jogo aggregate)
         {
             var uncommittedEvents = aggregate.GetUncommittedEvents().ToList();
             foreach (var @event in uncommittedEvents)

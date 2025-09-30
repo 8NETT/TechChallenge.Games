@@ -9,19 +9,19 @@ public static class SearchEndpoints
 {
     public static IEndpointRouteBuilder MapSearchEndpoints(this IEndpointRouteBuilder app)
     {
-        app.MapPost("/search/reindex", async (IJogoSearch indexer, CancellationToken ct) =>
-            {
-                var count = await indexer.ReindexAllAsync(ct);
-                return Results.Ok(new { indexed = count });
-            })
-            .WithName("ReindexJogos")
-            .WithSummary("Reindexa todos os jogos do SQL para o Elasticsearch");
+        //app.MapPost("/search/reindex", async (IJogoSearch indexer, CancellationToken ct) =>
+        //    {
+        //        var count = await indexer.ReindexAllAsync(ct);
+        //        return Results.Ok(new { indexed = count });
+        //    })
+        //    .WithName("ReindexJogos")
+        //    .WithSummary("Reindexa todos os jogos do SQL para o Elasticsearch");
 
-        app.MapPost("/search", async (ISearchJogos jogos,[FromBody] SearchRequest request) =>
+        app.MapPost("/search", async (IJogoService jogos, [FromBody] SearchRequest request) =>
         {
             try
             {
-                var result = await jogos.SearchJogosAsync(request.Termo,request.From,request.Size);
+                var result = await jogos.BuscarAsync(request.Termo, request.From, request.Size);
                 return Results.Ok(result);
             }
             catch (Exception e)

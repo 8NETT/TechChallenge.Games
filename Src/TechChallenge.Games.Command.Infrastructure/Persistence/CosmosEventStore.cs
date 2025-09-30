@@ -3,6 +3,7 @@ using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
 using TechChallenge.Games.Command.Domain.Events;
 using TechChallenge.Games.Command.Domain.Persistence;
+using Microsoft.Extensions.Options;
 
 namespace TechChallenge.Games.Command.Infrastructure.Persistence
 {
@@ -27,6 +28,8 @@ namespace TechChallenge.Games.Command.Infrastructure.Persistence
             _client = new CosmosClient(config.EndpointUri, config.Key, options);
             _container = _client.GetContainer(config.DatabaseId, config.ContainerId);
         }
+
+        public CosmosEventStore(IOptions<CosmosConfig> options) : this(options.Value) { }
 
         public async Task AppendAsync(BaseEvent @event)
         {

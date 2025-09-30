@@ -2,21 +2,31 @@
 using TechChallenge.Games.Application.Contracts;
 using TechChallenge.Games.Application.DTOs;
 using TechChallenge.Games.Application.Mappers;
-using TechChallenge.Games.Core.Repository;
+using TechChallenge.Games.Command.Domain.Persistence;
+using TechChallenge.Games.Query.Domain.Persistence;
 
 namespace TechChallenge.Games.Application.Services
 {
-    public class JogoService(IUnitOfWork unitOfWork) : BaseService, IJogoService
+    public class JogoService : BaseService, IJogoService
     {
-        public async Task<IEnumerable<JogoDTO>> ObterTodosAsync()
+        private JogoCommandRepository _commandRepository;
+        private IJogoQueryRepository _queryRepository;
+
+        public JogoService(JogoCommandRepository commandRepository, IJogoQueryRepository queryRepository)
         {
-            var jogos = await unitOfWork.JogoRepository.ObterTodosAsync();
+            _commandRepository = commandRepository;
+            _queryRepository = queryRepository;
+        }
+
+        public async Task<IEnumerable<JogoDTO>> ObterTodosAsync(int inicio, int tamanho)
+        {
+            var jogos = await _queryRepository.ObterTodosAsync(inicio, tamanho);
             return jogos.Select(j => j.ToDTO());
         }
 
-        public async Task<Result<JogoDTO>> ObterPorIdAsync(int id)
+        public async Task<Result<JogoDTO>> ObterPorIdAsync(Guid id)
         {
-            var jogo = await unitOfWork.JogoRepository.ObterPorIdAsync(id);
+            var jogo = await _queryRepository.ObterPorIdAsync(id);
 
             if (jogo == null)
                 return Result.NotFound("Jogo não localizado.");
@@ -32,50 +42,72 @@ namespace TechChallenge.Games.Application.Services
             if (await ExisteJogoComNomeAsync(dto.Nome))
                 return Result.Conflict("Já existe um jogo cadastrado com esse nome.");
 
-            var entidade = dto.ToEntity();
+            var jogo = dto.ToEntity();
+            await _commandRepository.SalvarAsync(jogo);
 
-            unitOfWork.JogoRepository.Cadastrar(entidade);
-            await unitOfWork.CommitAsync();
-
-            return entidade.ToDTO();
+            return jogo.ToDTO();
         }
 
-        public async Task<Result<JogoDTO>> AlterarAsync(AlterarJogoDTO dto)
+        public async Task<Result<JogoDTO>> AlterarDadosAsync(AlterarDadosDTO dto)
         {
             if (!TryValidate(dto, out var validationResult))
                 return validationResult;
 
-            var jogo = await unitOfWork.JogoRepository.ObterPorIdAsync(dto.Id);
+            var jogo = await _commandRepository.ObterPorIdAsync(dto.Id);
 
             if (jogo == null)
                 return Result.NotFound("Jogo não localizado.");
             if (jogo.Nome != dto.Nome && await ExisteJogoComNomeAsync(dto.Nome))
                 return Result.Conflict("Já existe um jogo cadastrado com esse nome.");
 
-            var entidade = dto.ToEntity(jogo);
+            jogo.AlterarDados(dto.Nome, dto.Descricao, dto.DataLancamento);
+            await _commandRepository.SalvarAsync(jogo);
 
-            unitOfWork.JogoRepository.Cadastrar(entidade);
-            await unitOfWork.CommitAsync();
-
-            return entidade.ToDTO();
+            return jogo.ToDTO();
         }
 
-        public async Task<Result> DeletarAsync(int id)
+        public async Task<Result<JogoDTO>> AlterarPrecoAsync(AlterarPrecoDTO dto)
         {
-            var jogo = await unitOfWork.JogoRepository.ObterPorIdAsync(id);
+            var jogo = await _commandRepository.ObterPorIdAsync(dto.Id);
 
             if (jogo == null)
                 return Result.NotFound("Jogo não localizado.");
 
-            unitOfWork.JogoRepository.Deletar(jogo);
-            await unitOfWork.CommitAsync();
+            jogo.AlterarPreco(dto.NovoPreco);
+            await _commandRepository.SalvarAsync(jogo);
+
+            return jogo.ToDTO();
+        }
+
+        public async Task<Result<JogoDTO>> AplicarDescontoAsync(AplicarDescontoDTO dto)
+        {
+            var jogo = await _commandRepository.ObterPorIdAsync(dto.Id);
+
+            if (jogo == null)
+                return Result.NotFound("Jogo não localizado.");
+
+            jogo.AplicarDesconto(dto.Desconto);
+            await _commandRepository.SalvarAsync(jogo);
+
+            return jogo.ToDTO();
+        }
+
+        public async Task<Result> DeletarAsync(Guid id)
+        {
+            var jogo = await _commandRepository.ObterPorIdAsync(id);
+
+            if (jogo == null)
+                return Result.NotFound("Jogo não localizado.");
+
+            jogo.Remover();
+            await _commandRepository.SalvarAsync(jogo);
 
             return Result.Success();
         }
 
-        public void Dispose() => unitOfWork.Dispose();
+        public void Dispose() => _commandRepository.Dispose();
 
         private async Task<bool> ExisteJogoComNomeAsync(string nome) =>
-            await unitOfWork.JogoRepository.ObterPorNomeAsync(nome) != null;
+            await _queryRepository.ObterPorNomeAsync(nome) != null;
     }
 }

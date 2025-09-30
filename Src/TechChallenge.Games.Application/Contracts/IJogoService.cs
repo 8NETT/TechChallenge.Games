@@ -5,10 +5,12 @@ namespace TechChallenge.Games.Application.Contracts
 {
     public interface IJogoService : IDisposable
     {
-        Task<IEnumerable<JogoDTO>> ObterTodosAsync();
-        Task<Result<JogoDTO>> ObterPorIdAsync(int id);
+        Task<IEnumerable<JogoDTO>> BuscarAsync(string termo, int inicio, int tamanho);
+        Task<Result<JogoDTO>> ObterPorIdAsync(Guid id);
         Task<Result<JogoDTO>> CadastrarAsync(CadastrarJogoDTO dto);
-        Task<Result<JogoDTO>> AlterarAsync(AlterarJogoDTO dto);
-        Task<Result> DeletarAsync(int id);
+        Task<Result<JogoDTO>> AlterarDadosAsync(AlterarDadosDTO dto);
+        Task<Result<JogoDTO>> AlterarPrecoAsync(AlterarPrecoDTO dto);
+        Task<Result<JogoDTO>> AplicarDescontoAsync(AplicarDescontoDTO dto);
+        Task<Result> DeletarAsync(Guid id);
     }
 }

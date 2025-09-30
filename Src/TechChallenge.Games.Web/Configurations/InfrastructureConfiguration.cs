@@ -1,10 +1,9 @@
 ﻿using Elastic.Clients.Elasticsearch;
 using Elastic.Transport;
-using TechChallenge.Games.Core.Repository;
-using TechChallenge.Games.Infrastructure.Repository;
-using Microsoft.EntityFrameworkCore;
-using TechChallenge.Games.Application.Contracts;
-using TechChallenge.Games.Infrastructure.Search;
+using TechChallenge.Games.Command.Infrastructure.Persistence;
+using TechChallenge.Games.Command.Domain.Persistence;
+using TechChallenge.Games.Query.Domain.Persistence;
+using TechChallenge.Games.Query.Infrastructure.Persistence;
 
 namespace TechChallenge.Games.Web.Configurations
 {
@@ -13,15 +12,8 @@ namespace TechChallenge.Games.Web.Configurations
         public static void AddInfrastructureConfiguration(this WebApplicationBuilder builder)
         {
             var config = builder.Configuration;
-
-
-
-            var connectionString = config.GetConnectionString("ConnectionString")
-                                   ?? throw new InvalidOperationException(
-                                       "ConnectionString não localizada no arquivo de configuração.");
-
-            builder.Services.AddDbContext<ApplicationDbContext>(
-                options => { options.UseSqlServer(connectionString); }, ServiceLifetime.Scoped);
+            builder.Services.Configure<CosmosConfig>(config.GetSection(nameof(CosmosConfig)));
+            builder.Services.AddScoped<IEventStore, CosmosEventStore>();
 
             if (builder.Environment.IsDevelopment())
             {
@@ -44,14 +36,16 @@ namespace TechChallenge.Games.Web.Configurations
 
                 var settings =
                     new ElasticsearchClientSettings(cloudId ?? string.Empty, new ApiKey(apiKey ?? string.Empty));
-                builder.Services.AddSingleton<ElasticsearchClient>(new ElasticsearchClient(settings));
+                builder.Services.AddSingleton(new ElasticsearchClient(settings));
             }
 
+            builder.Services.AddScoped<IJogoQueryRepository, JogoQueryRepository>(f =>
+            {
+                var client = f.GetRequiredService<ElasticsearchClient>();
+                var index = builder.Configuration["Elasticsearch:IndexName"];
 
-            builder.Services.AddScoped<IJogoRepository, JogoRepository>();
-            builder.Services.AddScoped<IJogoSearch, JogoSearch>();
-            builder.Services.AddScoped<ISearchJogos, SearchJogos>();
-            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+                return new JogoQueryRepository(client, indexName);
+            });
         }
     }
 }

@@ -2,8 +2,11 @@
 
 namespace TechChallenge.Games.Application.DTOs
 {
-    public class CadastrarJogoDTO
+    public class AlterarDadosDTO
     {
+        [Required(ErrorMessage = "O campo {0} deve ser preenchido.")]
+        public required Guid Id { get; set; }
+
         [Required(ErrorMessage = "O campo {0} deve ser preenchido.")]
         [Length(3, 100, ErrorMessage = "O campo {0} deve ter entre 3 a 100 caracteres.")]
         public required string Nome { get; set; }
@@ -13,9 +16,5 @@ namespace TechChallenge.Games.Application.DTOs
 
         [Required(ErrorMessage = "O campo {0} deve ser preenchido.")]
         public required DateTime DataLancamento { get; set; }
-
-        [Required(ErrorMessage = "O campo {0} deve ser preenchido.")]
-        [Range(0, int.MaxValue, ErrorMessage = "O campo {0} deve ser positivo.")]
-        public required decimal Preco { get; set; }
     }
 }

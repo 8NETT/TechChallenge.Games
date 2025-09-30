@@ -1,5 +1,6 @@
 ﻿using TechChallenge.Games.Application.DTOs;
-using TechChallenge.Games.Core.Entity;
+using TechChallenge.Games.Command.Domain.Aggregates;
+using TechChallenge.Games.Query.Domain.Documents;
 
 namespace TechChallenge.Games.Application.Mappers
 {
@@ -9,25 +10,27 @@ namespace TechChallenge.Games.Application.Mappers
         {
             Id = entidade.Id,
             Nome = entidade.Nome,
-            Valor = entidade.Valor,
-            Desconto = entidade.Desconto
+            DataLancamento = entidade.DataLancamento,
+            Preco = entidade.Valor,
+            Desconto = entidade.Desconto,
+            Valor = entidade.Valor
         };
 
-        public static Jogo ToEntity(this CadastrarJogoDTO dto) => Jogo.New()
-            .DataCriacao(DateTime.Now)
-            .Nome(dto.Nome)
-            .Valor(dto.Valor)
-            .Descricao(dto.Descricao)
-            .Desconto(dto.Desconto)
-            .Build();
+        public static JogoDTO ToDTO(this JogoDocument document) => new JogoDTO
+        {
+            Id = document.Id,
+            Nome = document.Nome,
+            DataLancamento = document.DataLancamento,
+            Preco = document.Preco,
+            Desconto = document.Desconto,
+            Valor = document.Valor
+        };
 
-        public static Jogo ToEntity(this AlterarJogoDTO dto, Jogo entidade) => Jogo.New()
-            .Id(entidade.Id)
-            .DataCriacao(entidade.DataCriacao)
+        public static Jogo ToEntity(this CadastrarJogoDTO dto) => Jogo.Novo
             .Nome(dto.Nome)
-            .Valor(dto.Valor)
             .Descricao(dto.Descricao)
-            .Desconto(dto.Desconto)
+            .DataLancamento(dto.DataLancamento)
+            .Preco(dto.Preco)
             .Build();
     }
 }
