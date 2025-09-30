@@ -20,8 +20,9 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
+        var connectionString = "Server=localhost;Database=gamesDb;User Id=sa;Password=Lagavi30!;TrustServerCertificate=True;";
         if (!optionsBuilder.IsConfigured)
-            optionsBuilder.UseSqlServer(_connectionString);
+            optionsBuilder.UseSqlServer(connectionString);
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder) =>

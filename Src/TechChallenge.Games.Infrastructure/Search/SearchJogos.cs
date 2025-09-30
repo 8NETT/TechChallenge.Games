@@ -1,18 +1,24 @@
 using Elastic.Clients.Elasticsearch;
+using Elastic.Clients.Elasticsearch.QueryDsl;
+using TechChallenge.Games.Application.Contracts;
 using TechChallenge.Games.Core.Documents;
 using TechChallenge.Games.Infrastructure.Configurations;
 
 namespace TechChallenge.Games.Infrastructure.Search;
 
-public class SearchJogos
+public class SearchJogos : ISearchJogos
 {
+    private readonly ElasticsearchClient _es;
+    public SearchJogos(ElasticsearchClient es)
+    {
+        _es = es;
+    }
     public async Task<SearchResult<JogoDocument>> SearchJogosAsync(
-        ElasticsearchClient es,
         string query,
         int from = 0,
         int size = 20)
     {
-        var res = await es.SearchAsync<JogoDocument>(s => s
+        var res = await _es.SearchAsync<JogoDocument>(s => s
             .Indices(ElasticSetup.IndexName)
             .From(from)
             .Size(size)
@@ -22,6 +28,7 @@ public class SearchJogos
                     .Fields(f => f.Descricao)
                     .Query(query)
                     .Fuzziness("AUTO")
+                    .Operator(Operator.Or)
                 )
             )
         );

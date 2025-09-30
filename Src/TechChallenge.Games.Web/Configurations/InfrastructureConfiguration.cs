@@ -13,6 +13,9 @@ namespace TechChallenge.Games.Web.Configurations
         public static void AddInfrastructureConfiguration(this WebApplicationBuilder builder)
         {
             var config = builder.Configuration;
+
+
+
             var connectionString = config.GetConnectionString("ConnectionString")
                                    ?? throw new InvalidOperationException(
                                        "ConnectionString não localizada no arquivo de configuração.");
@@ -22,7 +25,16 @@ namespace TechChallenge.Games.Web.Configurations
 
             if (builder.Environment.IsDevelopment())
             {
-                var settings = new ElasticsearchClientSettings(new Uri(config["Elasticsearch:Url"] ?? string.Empty));
+                var username = config["Elasticsearch:Username"];
+                var password = config["Elasticsearch:Password"];
+
+                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+                    throw new InvalidOperationException(
+                        "Username ou Password do Elasticsearch não localizado no arquivo de configuração.");
+
+                var settings = new ElasticsearchClientSettings(new Uri(config["Elasticsearch:Url"] ?? string.Empty))
+                    .Authentication(new BasicAuthentication(username, password));
+
                 builder.Services.AddSingleton(new ElasticsearchClient(settings));
             }
             else
@@ -38,6 +50,7 @@ namespace TechChallenge.Games.Web.Configurations
 
             builder.Services.AddScoped<IJogoRepository, JogoRepository>();
             builder.Services.AddScoped<IJogoSearch, JogoSearch>();
+            builder.Services.AddScoped<ISearchJogos, SearchJogos>();
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
     }

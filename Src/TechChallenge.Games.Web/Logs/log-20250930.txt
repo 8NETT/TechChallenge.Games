@@ -1,0 +1,865 @@
+2025-09-30 01:29:35.591 -03:00 [INF] User profile is available. Using 'C:\Users\gabri\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-30 01:29:36.061 -03:00 [INF] Now listening on: https://localhost:7016
+2025-09-30 01:29:36.063 -03:00 [INF] Now listening on: http://localhost:5124
+2025-09-30 01:29:36.077 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-09-30 01:29:36.143 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-30 01:29:36.144 -03:00 [INF] Hosting environment: Development
+2025-09-30 01:29:36.146 -03:00 [INF] Content root path: C:\Users\gabri\source\repos\8NETT\TechChallenge.Games\Src\TechChallenge.Games.Web
+2025-09-30 01:29:56.672 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/ - null null
+2025-09-30 01:29:56.854 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/ - 404 0 null 186.3244ms
+2025-09-30 01:29:56.863 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7016/, Response status code: 404
+2025-09-30 01:30:07.911 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.html - null null
+2025-09-30 01:30:07.980 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.html - 200 null text/html;charset=utf-8 68.7647ms
+2025-09-30 01:30:08.016 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui.css - null null
+2025-09-30 01:30:08.016 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.js - null null
+2025-09-30 01:30:08.016 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui-standalone-preset.js - null null
+2025-09-30 01:30:08.029 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.js - 200 null application/javascript;charset=utf-8 12.8697ms
+2025-09-30 01:30:08.016 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.css - null null
+2025-09-30 01:30:08.016 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui-bundle.js - null null
+2025-09-30 01:30:08.016 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-30 01:30:08.047 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.css - 200 152 text/css 31.099ms
+2025-09-30 01:30:08.058 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - 200 16531 application/javascript; charset=utf-8 41.996ms
+2025-09-30 01:30:08.058 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui.css - 200 23647 text/css 43.0162ms
+2025-09-30 01:30:08.058 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui-standalone-preset.js - 200 70860 text/javascript 42.7776ms
+2025-09-30 01:30:08.059 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui-bundle.js - 200 417980 text/javascript 43.2612ms
+2025-09-30 01:30:08.321 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_vs/browserLink - null null
+2025-09-30 01:30:08.365 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_vs/browserLink - 200 null text/javascript; charset=UTF-8 44.1671ms
+2025-09-30 01:30:09.349 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - null null
+2025-09-30 01:30:09.363 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.2792ms
+2025-09-30 01:30:09.365 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/favicon-32x32.png - null null
+2025-09-30 01:30:09.371 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/favicon-32x32.png - 200 628 image/png 5.9554ms
+2025-09-30 01:30:14.897 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/jogo - null null
+2025-09-30 01:30:14.907 -03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-09-30 01:30:14.913 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-09-30 01:30:14.915 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/jogo - 401 0 null 18.2456ms
+2025-09-30 01:33:35.883 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/jogo - null null
+2025-09-30 01:33:35.957 -03:00 [INF] Executing endpoint 'HTTP: GET /jogo/'
+2025-09-30 01:33:36.390 -03:00 [WRN] No instantiatable types implementing `IEntityTypeConfiguration` were found while while scanning assembly 'System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e'.
+2025-09-30 01:33:36.522 -03:00 [WRN] No store type was specified for the decimal property 'Valor' on entity type 'Jogo'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-30 01:33:37.146 -03:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [j].[Id], [j].[DataCriacao], [j].[Desconto], [j].[Descricao], [j].[Nome], [j].[Valor]
+FROM [Jogo] AS [j]
+2025-09-30 01:33:37.174 -03:00 [INF] Setting HTTP status code 200.
+2025-09-30 01:33:37.178 -03:00 [INF] Writing value of type 'JogoDTO[]' as Json.
+2025-09-30 01:33:37.187 -03:00 [INF] Executed endpoint 'HTTP: GET /jogo/'
+2025-09-30 01:33:37.195 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/jogo - 200 null application/json; charset=utf-8 1311.1143ms
+2025-09-30 01:34:00.121 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7016/search/reindex - null 0
+2025-09-30 01:34:00.131 -03:00 [INF] Executing endpoint 'HTTP: POST /search/reindex'
+2025-09-30 01:34:00.195 -03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [j].[Id], [j].[DataCriacao], [j].[Desconto], [j].[Descricao], [j].[Nome], [j].[Valor]
+FROM [Jogo] AS [j]
+2025-09-30 01:34:00.198 -03:00 [INF] Setting HTTP status code 200.
+2025-09-30 01:34:00.201 -03:00 [INF] Writing value of type '<>f__AnonymousType1`1' as Json.
+2025-09-30 01:34:00.204 -03:00 [INF] Executed endpoint 'HTTP: POST /search/reindex'
+2025-09-30 01:34:00.205 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7016/search/reindex - 200 null application/json; charset=utf-8 84.1158ms
+2025-09-30 02:12:41.869 -03:00 [INF] User profile is available. Using 'C:\Users\gabri\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-30 02:12:42.196 -03:00 [INF] Now listening on: https://localhost:7016
+2025-09-30 02:12:42.198 -03:00 [INF] Now listening on: http://localhost:5124
+2025-09-30 02:12:42.204 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-09-30 02:12:42.339 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-30 02:12:42.340 -03:00 [INF] Hosting environment: Development
+2025-09-30 02:12:42.341 -03:00 [INF] Content root path: C:\Users\gabri\source\repos\8NETT\TechChallenge.Games\Src\TechChallenge.Games.Web
+2025-09-30 02:12:52.024 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.html - null null
+2025-09-30 02:12:52.136 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.html - 200 null text/html;charset=utf-8 117.5041ms
+2025-09-30 02:12:52.178 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-30 02:12:52.191 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - 200 16531 application/javascript; charset=utf-8 12.8888ms
+2025-09-30 02:12:52.467 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_vs/browserLink - null null
+2025-09-30 02:12:52.493 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.7571ms
+2025-09-30 02:12:53.189 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - null null
+2025-09-30 02:12:53.203 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.6306ms
+2025-09-30 02:13:15.831 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.html - null null
+2025-09-30 02:13:15.840 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.html - 200 null text/html;charset=utf-8 8.9215ms
+2025-09-30 02:13:15.869 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui.css - null null
+2025-09-30 02:13:15.873 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.css - null null
+2025-09-30 02:13:15.914 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui-bundle.js - null null
+2025-09-30 02:13:15.914 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui-standalone-preset.js - null null
+2025-09-30 02:13:15.948 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.js - null null
+2025-09-30 02:13:15.952 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-30 02:13:15.973 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.js - 200 null application/javascript;charset=utf-8 24.852ms
+2025-09-30 02:13:16.000 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.css - 200 152 text/css 127.2596ms
+2025-09-30 02:13:16.007 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui.css - 200 23647 text/css 137.4717ms
+2025-09-30 02:13:15.956 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_vs/browserLink - null null
+2025-09-30 02:13:16.000 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - 200 16531 application/javascript; charset=utf-8 49.0032ms
+2025-09-30 02:13:16.015 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui-bundle.js - 200 417980 text/javascript 101.6392ms
+2025-09-30 02:13:16.013 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui-standalone-preset.js - 200 70860 text/javascript 99.01ms
+2025-09-30 02:13:16.029 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_vs/browserLink - 200 null text/javascript; charset=UTF-8 73.7346ms
+2025-09-30 02:13:17.945 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - null null
+2025-09-30 02:13:17.947 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/favicon-32x32.png - null null
+2025-09-30 02:13:17.954 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/favicon-32x32.png - 200 628 image/png 6.3449ms
+2025-09-30 02:13:17.954 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 9.4336ms
+2025-09-30 02:15:46.355 -03:00 [INF] User profile is available. Using 'C:\Users\gabri\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-30 02:15:46.689 -03:00 [INF] Now listening on: https://localhost:7016
+2025-09-30 02:15:46.690 -03:00 [INF] Now listening on: http://localhost:5124
+2025-09-30 02:15:46.696 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-09-30 02:15:46.832 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-30 02:15:46.833 -03:00 [INF] Hosting environment: Development
+2025-09-30 02:15:46.834 -03:00 [INF] Content root path: C:\Users\gabri\source\repos\8NETT\TechChallenge.Games\Src\TechChallenge.Games.Web
+2025-09-30 02:15:50.371 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.html - null null
+2025-09-30 02:15:50.471 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.html - 200 null text/html;charset=utf-8 103.1415ms
+2025-09-30 02:15:50.504 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-30 02:15:50.515 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - 200 16531 application/javascript; charset=utf-8 11.127ms
+2025-09-30 02:15:50.538 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_vs/browserLink - null null
+2025-09-30 02:15:50.566 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.7257ms
+2025-09-30 02:15:50.859 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - null null
+2025-09-30 02:15:50.874 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 15.269ms
+2025-09-30 02:20:37.212 -03:00 [INF] User profile is available. Using 'C:\Users\gabri\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-30 02:20:37.583 -03:00 [INF] Now listening on: https://localhost:7016
+2025-09-30 02:20:37.585 -03:00 [INF] Now listening on: http://localhost:5124
+2025-09-30 02:20:37.592 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-09-30 02:20:37.650 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-30 02:20:37.652 -03:00 [INF] Hosting environment: Development
+2025-09-30 02:20:37.653 -03:00 [INF] Content root path: C:\Users\gabri\source\repos\8NETT\TechChallenge.Games\Src\TechChallenge.Games.Web
+2025-09-30 02:20:37.770 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.html - null null
+2025-09-30 02:20:37.872 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.html - 200 null text/html;charset=utf-8 106.9072ms
+2025-09-30 02:20:37.904 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui-standalone-preset.js - null null
+2025-09-30 02:20:37.904 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.css - null null
+2025-09-30 02:20:37.904 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui-bundle.js - null null
+2025-09-30 02:20:37.904 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui.css - null null
+2025-09-30 02:20:37.909 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.js - null null
+2025-09-30 02:20:37.936 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-30 02:20:37.969 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.js - 200 null application/javascript;charset=utf-8 60.0141ms
+2025-09-30 02:20:37.975 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.css - 200 152 text/css 71.2598ms
+2025-09-30 02:20:37.988 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - 200 16531 application/javascript; charset=utf-8 51.9379ms
+2025-09-30 02:20:37.989 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui.css - 200 23647 text/css 84.8026ms
+2025-09-30 02:20:37.989 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui-bundle.js - 200 417980 text/javascript 84.3513ms
+2025-09-30 02:20:37.989 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui-standalone-preset.js - 200 70860 text/javascript 84.7003ms
+2025-09-30 02:20:38.213 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_vs/browserLink - null null
+2025-09-30 02:20:38.236 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_vs/browserLink - 200 null text/javascript; charset=UTF-8 23.001ms
+2025-09-30 02:20:38.968 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/favicon-32x32.png - null null
+2025-09-30 02:20:38.968 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - null null
+2025-09-30 02:20:38.973 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/favicon-32x32.png - 200 628 image/png 5.2323ms
+2025-09-30 02:20:38.984 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 16.5292ms
+2025-09-30 02:21:30.796 -03:00 [INF] User profile is available. Using 'C:\Users\gabri\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-30 02:21:31.177 -03:00 [INF] Now listening on: https://localhost:7016
+2025-09-30 02:21:31.179 -03:00 [INF] Now listening on: http://localhost:5124
+2025-09-30 02:21:31.186 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-09-30 02:21:31.334 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-30 02:21:31.335 -03:00 [INF] Hosting environment: Development
+2025-09-30 02:21:31.336 -03:00 [INF] Content root path: C:\Users\gabri\source\repos\8NETT\TechChallenge.Games\Src\TechChallenge.Games.Web
+2025-09-30 02:21:31.622 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.html - null null
+2025-09-30 02:21:31.730 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.html - 200 null text/html;charset=utf-8 114.168ms
+2025-09-30 02:21:31.762 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-30 02:21:31.774 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - 200 16531 application/javascript; charset=utf-8 12.3185ms
+2025-09-30 02:21:31.808 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_vs/browserLink - null null
+2025-09-30 02:21:31.839 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.9529ms
+2025-09-30 02:21:32.129 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - null null
+2025-09-30 02:21:32.143 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.4892ms
+2025-09-30 02:21:33.522 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.html - null null
+2025-09-30 02:21:33.528 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.html - 200 null text/html;charset=utf-8 6.185ms
+2025-09-30 02:21:33.561 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_vs/browserLink - null null
+2025-09-30 02:21:33.561 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-30 02:21:33.570 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - 200 16531 application/javascript; charset=utf-8 8.2403ms
+2025-09-30 02:21:33.576 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.9997ms
+2025-09-30 02:21:33.898 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - null null
+2025-09-30 02:21:33.906 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.2754ms
+2025-09-30 02:21:34.463 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.html - null null
+2025-09-30 02:21:34.467 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.html - 200 null text/html;charset=utf-8 4.0511ms
+2025-09-30 02:21:34.499 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_vs/browserLink - null null
+2025-09-30 02:21:34.499 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-30 02:21:34.505 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - 200 16531 application/javascript; charset=utf-8 5.7031ms
+2025-09-30 02:21:34.507 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_vs/browserLink - 200 null text/javascript; charset=UTF-8 7.8527ms
+2025-09-30 02:21:34.812 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - null null
+2025-09-30 02:21:34.821 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.1383ms
+2025-09-30 02:21:35.264 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.html - null null
+2025-09-30 02:21:35.268 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.html - 200 null text/html;charset=utf-8 4.2162ms
+2025-09-30 02:21:35.299 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_vs/browserLink - null null
+2025-09-30 02:21:35.304 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-30 02:21:35.311 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_vs/browserLink - 200 null text/javascript; charset=UTF-8 11.215ms
+2025-09-30 02:21:35.311 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - 200 16531 application/javascript; charset=utf-8 7.492ms
+2025-09-30 02:21:35.605 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - null null
+2025-09-30 02:21:35.611 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 6.3931ms
+2025-09-30 02:21:35.937 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.html - null null
+2025-09-30 02:21:35.941 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.html - 200 null text/html;charset=utf-8 4.1313ms
+2025-09-30 02:21:35.977 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui.css - null null
+2025-09-30 02:21:35.979 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui-standalone-preset.js - null null
+2025-09-30 02:21:35.980 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.js - null null
+2025-09-30 02:21:35.979 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui-bundle.js - null null
+2025-09-30 02:21:35.994 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.js - 200 null application/javascript;charset=utf-8 14.0821ms
+2025-09-30 02:21:35.977 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.css - null null
+2025-09-30 02:21:35.984 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-30 02:21:36.043 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.css - 200 152 text/css 66.179ms
+2025-09-30 02:21:36.032 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_vs/browserLink - null null
+2025-09-30 02:21:36.049 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui-standalone-preset.js - 200 70860 text/javascript 69.4226ms
+2025-09-30 02:21:36.052 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui-bundle.js - 200 417980 text/javascript 73.1035ms
+2025-09-30 02:21:36.052 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - 200 16531 application/javascript; charset=utf-8 67.8045ms
+2025-09-30 02:21:36.049 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui.css - 200 23647 text/css 72.1676ms
+2025-09-30 02:21:36.063 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_vs/browserLink - 200 null text/javascript; charset=UTF-8 52.0081ms
+2025-09-30 02:21:36.309 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/favicon-32x32.png - null null
+2025-09-30 02:21:36.309 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - null null
+2025-09-30 02:21:36.314 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/favicon-32x32.png - 200 628 image/png 4.5191ms
+2025-09-30 02:21:36.320 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 10.5706ms
+2025-09-30 02:21:37.248 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.html - null null
+2025-09-30 02:21:37.253 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.html - 200 null text/html;charset=utf-8 4.1904ms
+2025-09-30 02:21:37.280 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui.css - null null
+2025-09-30 02:21:37.283 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui.css - 200 23647 text/css 3.2985ms
+2025-09-30 02:21:37.291 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.css - null null
+2025-09-30 02:21:37.291 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui-standalone-preset.js - null null
+2025-09-30 02:21:37.291 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui-bundle.js - null null
+2025-09-30 02:21:37.291 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.js - null null
+2025-09-30 02:21:37.291 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-30 02:21:37.294 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.css - 200 152 text/css 3.4685ms
+2025-09-30 02:21:37.298 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui-standalone-preset.js - 200 70860 text/javascript 6.7763ms
+2025-09-30 02:21:37.301 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui-bundle.js - 200 417980 text/javascript 10.3109ms
+2025-09-30 02:21:37.303 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.js - 200 null application/javascript;charset=utf-8 12.4607ms
+2025-09-30 02:21:37.307 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - 200 16531 application/javascript; charset=utf-8 15.6156ms
+2025-09-30 02:21:37.317 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_vs/browserLink - null null
+2025-09-30 02:21:37.332 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.4024ms
+2025-09-30 02:21:37.616 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - null null
+2025-09-30 02:21:37.619 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/favicon-32x32.png - null null
+2025-09-30 02:21:37.622 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 6.4407ms
+2025-09-30 02:21:37.624 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/favicon-32x32.png - 200 628 image/png 4.5294ms
+2025-09-30 02:22:53.194 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.html - null null
+2025-09-30 02:22:53.203 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.html - 200 null text/html;charset=utf-8 8.9345ms
+2025-09-30 02:22:53.237 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui.css - null null
+2025-09-30 02:22:53.239 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.css - null null
+2025-09-30 02:22:53.239 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui-bundle.js - null null
+2025-09-30 02:22:53.262 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui.css - 200 23647 text/css 24.5788ms
+2025-09-30 02:22:53.245 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui-standalone-preset.js - null null
+2025-09-30 02:22:53.251 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.js - null null
+2025-09-30 02:22:53.256 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-30 02:22:53.269 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.css - 200 152 text/css 29.7613ms
+2025-09-30 02:22:53.273 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui-bundle.js - 200 417980 text/javascript 33.9638ms
+2025-09-30 02:22:53.281 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui-standalone-preset.js - 200 70860 text/javascript 35.3591ms
+2025-09-30 02:22:53.283 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.js - 200 null application/javascript;charset=utf-8 32.779ms
+2025-09-30 02:22:53.284 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_vs/browserLink - null null
+2025-09-30 02:22:53.286 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - 200 16531 application/javascript; charset=utf-8 30.7718ms
+2025-09-30 02:22:53.306 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.7761ms
+2025-09-30 02:22:53.729 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - null null
+2025-09-30 02:22:53.733 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/favicon-32x32.png - null null
+2025-09-30 02:22:53.736 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 6.3773ms
+2025-09-30 02:22:53.738 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/favicon-32x32.png - 200 628 image/png 5.5187ms
+2025-09-30 02:22:59.183 -03:00 [INF] User profile is available. Using 'C:\Users\gabri\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-30 02:22:59.411 -03:00 [FTL] Application startup exception
+System.InvalidOperationException: Failure to infer one or more parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+jogos               | Body (Inferred)
+termo               | UNKNOWN        
+from                | Query String (Inferred)
+size                | Query String (Inferred)
+
+
+Did you mean to register the "UNKNOWN" parameters as a Service?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.EnsureEndpointsInitialized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.EnsureInitialized()
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationPolicyCache..ctor(EndpointDataSource dataSource)
+   at InvokeStub_AuthorizationPolicyCache..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at InvokeStub_AuthorizationMiddlewareInternal..ctor(Object, Object, Object, Object, Object)
+   at System.Reflection.ConstructorInvoker.InvokeImpl(Object arg1, Object arg2, Object arg3, Object arg4)
+   at System.Reflection.ConstructorInvoker.Invoke(Span`1 arguments)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.ReflectionMiddlewareBinder.CreateMiddleware(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2025-09-30 02:22:59.442 -03:00 [ERR] Hosting failed to start
+System.InvalidOperationException: Failure to infer one or more parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+jogos               | Body (Inferred)
+termo               | UNKNOWN        
+from                | Query String (Inferred)
+size                | Query String (Inferred)
+
+
+Did you mean to register the "UNKNOWN" parameters as a Service?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.EnsureEndpointsInitialized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.EnsureInitialized()
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationPolicyCache..ctor(EndpointDataSource dataSource)
+   at InvokeStub_AuthorizationPolicyCache..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at InvokeStub_AuthorizationMiddlewareInternal..ctor(Object, Object, Object, Object, Object)
+   at System.Reflection.ConstructorInvoker.InvokeImpl(Object arg1, Object arg2, Object arg3, Object arg4)
+   at System.Reflection.ConstructorInvoker.Invoke(Span`1 arguments)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.ReflectionMiddlewareBinder.CreateMiddleware(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-09-30 02:23:33.636 -03:00 [INF] User profile is available. Using 'C:\Users\gabri\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-30 02:23:33.861 -03:00 [FTL] Application startup exception
+System.InvalidOperationException: Failure to infer one or more parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+jogos               | Body (Inferred)
+termo               | UNKNOWN        
+from                | Query String (Inferred)
+size                | Query String (Inferred)
+
+
+Did you mean to register the "UNKNOWN" parameters as a Service?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.EnsureEndpointsInitialized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.EnsureInitialized()
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationPolicyCache..ctor(EndpointDataSource dataSource)
+   at InvokeStub_AuthorizationPolicyCache..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at InvokeStub_AuthorizationMiddlewareInternal..ctor(Object, Object, Object, Object, Object)
+   at System.Reflection.ConstructorInvoker.InvokeImpl(Object arg1, Object arg2, Object arg3, Object arg4)
+   at System.Reflection.ConstructorInvoker.Invoke(Span`1 arguments)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.ReflectionMiddlewareBinder.CreateMiddleware(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2025-09-30 02:23:33.891 -03:00 [ERR] Hosting failed to start
+System.InvalidOperationException: Failure to infer one or more parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+jogos               | Body (Inferred)
+termo               | UNKNOWN        
+from                | Query String (Inferred)
+size                | Query String (Inferred)
+
+
+Did you mean to register the "UNKNOWN" parameters as a Service?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.EnsureEndpointsInitialized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.EnsureInitialized()
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationPolicyCache..ctor(EndpointDataSource dataSource)
+   at InvokeStub_AuthorizationPolicyCache..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at InvokeStub_AuthorizationMiddlewareInternal..ctor(Object, Object, Object, Object, Object)
+   at System.Reflection.ConstructorInvoker.InvokeImpl(Object arg1, Object arg2, Object arg3, Object arg4)
+   at System.Reflection.ConstructorInvoker.Invoke(Span`1 arguments)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.ReflectionMiddlewareBinder.CreateMiddleware(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-09-30 02:23:45.007 -03:00 [INF] User profile is available. Using 'C:\Users\gabri\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-30 02:23:45.337 -03:00 [INF] Now listening on: https://localhost:7016
+2025-09-30 02:23:45.338 -03:00 [INF] Now listening on: http://localhost:5124
+2025-09-30 02:23:45.345 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-09-30 02:23:45.393 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-30 02:23:45.394 -03:00 [INF] Hosting environment: Development
+2025-09-30 02:23:45.395 -03:00 [INF] Content root path: C:\Users\gabri\source\repos\8NETT\TechChallenge.Games\Src\TechChallenge.Games.Web
+2025-09-30 02:23:54.877 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/ - null null
+2025-09-30 02:23:54.984 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/ - 404 0 null 112.5739ms
+2025-09-30 02:23:54.993 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7016/, Response status code: 404
+2025-09-30 02:23:59.990 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-30 02:24:00.002 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - 200 16531 application/javascript; charset=utf-8 12.6022ms
+2025-09-30 02:24:00.306 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_vs/browserLink - null null
+2025-09-30 02:24:00.332 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.7202ms
+2025-09-30 02:24:01.111 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - null null
+2025-09-30 02:24:01.130 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.0645ms
+2025-09-30 02:24:18.055 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7016/search?termo=Teste&from=0&size=10 - application/json 2
+2025-09-30 02:24:18.060 -03:00 [INF] Executing endpoint 'HTTP: POST /search'
+2025-09-30 02:24:18.074 -03:00 [INF] Executed endpoint 'HTTP: POST /search'
+2025-09-30 02:24:18.097 -03:00 [ERR] Unhandled exception for request POST /search
+System.NotSupportedException: Deserialization of interface or abstract types is not supported. Type 'TechChallenge.Games.Application.Contracts.ISearchJogos'. Path: $ | LineNumber: 0 | BytePositionInLine: 1.
+ ---> System.NotSupportedException: Deserialization of interface or abstract types is not supported. Type 'TechChallenge.Games.Application.Contracts.ISearchJogos'.
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ThrowNotSupportedException(ReadStack& state, Utf8JsonReader& reader, Exception innerException)
+   at System.Text.Json.ThrowHelper.ThrowNotSupportedException_DeserializeNoConstructor(JsonTypeInfo typeInfo, Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.ContinueDeserialize(ReadBufferState& bufferState, JsonReaderState& jsonReaderState, ReadStack& readStack, T& value)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsObjectAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.HttpRequestJsonExtensions.ReadFromJsonAsync(HttpRequest request, JsonTypeInfo jsonTypeInfo, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.HttpRequestJsonExtensions.ReadFromJsonAsync(HttpRequest request, JsonTypeInfo jsonTypeInfo, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<HandleRequestBodyAndCompileRequestDelegateForJson>g__TryReadBodyAsync|101_0(HttpContext httpContext, Type bodyType, String parameterTypeName, String parameterName, Boolean allowEmptyRequestBody, Boolean throwOnBadRequest, JsonTypeInfo jsonTypeInfo)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass101_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at TechChallenge.Games.Web.Middleware.ErroMiddleware.InvokeAsync(HttpContext context) in C:\Users\gabri\source\repos\8NETT\TechChallenge.Games\Src\TechChallenge.Games.Web\Middleware\ErroMiddleware.cs:line 20
+2025-09-30 02:24:18.138 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7016/search?termo=Teste&from=0&size=10 - 500 null application/json 83.3463ms
+2025-09-30 02:25:28.993 -03:00 [INF] User profile is available. Using 'C:\Users\gabri\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-30 02:25:29.213 -03:00 [FTL] Application startup exception
+System.InvalidOperationException: Failure to infer one or more parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+jogos               | Body (Inferred)
+termo               | UNKNOWN        
+from                | Query String (Inferred)
+size                | Query String (Inferred)
+
+
+Did you mean to register the "UNKNOWN" parameters as a Service?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.EnsureEndpointsInitialized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.EnsureInitialized()
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationPolicyCache..ctor(EndpointDataSource dataSource)
+   at InvokeStub_AuthorizationPolicyCache..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at InvokeStub_AuthorizationMiddlewareInternal..ctor(Object, Object, Object, Object, Object)
+   at System.Reflection.ConstructorInvoker.InvokeImpl(Object arg1, Object arg2, Object arg3, Object arg4)
+   at System.Reflection.ConstructorInvoker.Invoke(Span`1 arguments)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.ReflectionMiddlewareBinder.CreateMiddleware(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2025-09-30 02:25:29.244 -03:00 [ERR] Hosting failed to start
+System.InvalidOperationException: Failure to infer one or more parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+jogos               | Body (Inferred)
+termo               | UNKNOWN        
+from                | Query String (Inferred)
+size                | Query String (Inferred)
+
+
+Did you mean to register the "UNKNOWN" parameters as a Service?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.EnsureEndpointsInitialized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.EnsureInitialized()
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationPolicyCache..ctor(EndpointDataSource dataSource)
+   at InvokeStub_AuthorizationPolicyCache..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at InvokeStub_AuthorizationMiddlewareInternal..ctor(Object, Object, Object, Object, Object)
+   at System.Reflection.ConstructorInvoker.InvokeImpl(Object arg1, Object arg2, Object arg3, Object arg4)
+   at System.Reflection.ConstructorInvoker.Invoke(Span`1 arguments)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.ReflectionMiddlewareBinder.CreateMiddleware(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-09-30 02:27:00.131 -03:00 [INF] User profile is available. Using 'C:\Users\gabri\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-30 02:27:00.435 -03:00 [FTL] Application startup exception
+System.InvalidOperationException: Failure to infer one or more parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+jogos               | Body (Inferred)
+request             | UNKNOWN        
+
+
+Did you mean to register the "UNKNOWN" parameters as a Service?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.EnsureEndpointsInitialized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.EnsureInitialized()
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationPolicyCache..ctor(EndpointDataSource dataSource)
+   at InvokeStub_AuthorizationPolicyCache..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at InvokeStub_AuthorizationMiddlewareInternal..ctor(Object, Object, Object, Object, Object)
+   at System.Reflection.ConstructorInvoker.InvokeImpl(Object arg1, Object arg2, Object arg3, Object arg4)
+   at System.Reflection.ConstructorInvoker.Invoke(Span`1 arguments)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.ReflectionMiddlewareBinder.CreateMiddleware(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2025-09-30 02:27:00.466 -03:00 [ERR] Hosting failed to start
+System.InvalidOperationException: Failure to infer one or more parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+jogos               | Body (Inferred)
+request             | UNKNOWN        
+
+
+Did you mean to register the "UNKNOWN" parameters as a Service?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.EnsureEndpointsInitialized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.EnsureInitialized()
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationPolicyCache..ctor(EndpointDataSource dataSource)
+   at InvokeStub_AuthorizationPolicyCache..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at InvokeStub_AuthorizationMiddlewareInternal..ctor(Object, Object, Object, Object, Object)
+   at System.Reflection.ConstructorInvoker.InvokeImpl(Object arg1, Object arg2, Object arg3, Object arg4)
+   at System.Reflection.ConstructorInvoker.Invoke(Span`1 arguments)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.ReflectionMiddlewareBinder.CreateMiddleware(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-09-30 02:30:02.739 -03:00 [INF] User profile is available. Using 'C:\Users\gabri\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-30 02:30:03.077 -03:00 [FTL] Application startup exception
+System.InvalidOperationException: Failure to infer one or more parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+jogos               | Body (Inferred)
+request             | UNKNOWN        
+
+
+Did you mean to register the "UNKNOWN" parameters as a Service?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.EnsureEndpointsInitialized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.EnsureInitialized()
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationPolicyCache..ctor(EndpointDataSource dataSource)
+   at InvokeStub_AuthorizationPolicyCache..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at InvokeStub_AuthorizationMiddlewareInternal..ctor(Object, Object, Object, Object, Object)
+   at System.Reflection.ConstructorInvoker.InvokeImpl(Object arg1, Object arg2, Object arg3, Object arg4)
+   at System.Reflection.ConstructorInvoker.Invoke(Span`1 arguments)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.ReflectionMiddlewareBinder.CreateMiddleware(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2025-09-30 02:30:03.109 -03:00 [ERR] Hosting failed to start
+System.InvalidOperationException: Failure to infer one or more parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+jogos               | Body (Inferred)
+request             | UNKNOWN        
+
+
+Did you mean to register the "UNKNOWN" parameters as a Service?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.EnsureEndpointsInitialized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.EnsureInitialized()
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationPolicyCache..ctor(EndpointDataSource dataSource)
+   at InvokeStub_AuthorizationPolicyCache..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at InvokeStub_AuthorizationMiddlewareInternal..ctor(Object, Object, Object, Object, Object)
+   at System.Reflection.ConstructorInvoker.InvokeImpl(Object arg1, Object arg2, Object arg3, Object arg4)
+   at System.Reflection.ConstructorInvoker.Invoke(Span`1 arguments)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.ReflectionMiddlewareBinder.CreateMiddleware(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-09-30 02:36:14.323 -03:00 [INF] User profile is available. Using 'C:\Users\gabri\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-30 02:36:14.634 -03:00 [INF] Now listening on: https://localhost:7016
+2025-09-30 02:36:14.636 -03:00 [INF] Now listening on: http://localhost:5124
+2025-09-30 02:36:14.642 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-09-30 02:36:14.694 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-30 02:36:14.695 -03:00 [INF] Hosting environment: Development
+2025-09-30 02:36:14.696 -03:00 [INF] Content root path: C:\Users\gabri\source\repos\8NETT\TechChallenge.Games\Src\TechChallenge.Games.Web
+2025-09-30 02:36:19.226 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.html - null null
+2025-09-30 02:36:19.323 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.html - 200 null text/html;charset=utf-8 100.759ms
+2025-09-30 02:36:19.358 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.css - null null
+2025-09-30 02:36:19.363 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui-standalone-preset.js - null null
+2025-09-30 02:36:19.358 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui.css - null null
+2025-09-30 02:36:19.360 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui-bundle.js - null null
+2025-09-30 02:36:19.365 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.js - null null
+2025-09-30 02:36:19.395 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-30 02:36:19.416 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.js - 200 null application/javascript;charset=utf-8 50.4614ms
+2025-09-30 02:36:19.423 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.css - 200 152 text/css 64.5885ms
+2025-09-30 02:36:19.433 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - 200 16531 application/javascript; charset=utf-8 37.8364ms
+2025-09-30 02:36:19.433 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui-standalone-preset.js - 200 70860 text/javascript 72.6507ms
+2025-09-30 02:36:19.433 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui.css - 200 23647 text/css 74.8879ms
+2025-09-30 02:36:19.435 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui-bundle.js - 200 417980 text/javascript 74.8359ms
+2025-09-30 02:36:19.654 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_vs/browserLink - null null
+2025-09-30 02:36:19.676 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_vs/browserLink - 200 null text/javascript; charset=UTF-8 22.4886ms
+2025-09-30 02:36:20.508 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - null null
+2025-09-30 02:36:20.521 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/favicon-32x32.png - null null
+2025-09-30 02:36:20.523 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.1843ms
+2025-09-30 02:36:20.528 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/favicon-32x32.png - 200 628 image/png 6.4777ms
+2025-09-30 02:36:29.698 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7016/search - application/json 49
+2025-09-30 02:36:29.766 -03:00 [INF] Executing endpoint 'HTTP: POST /search'
+2025-09-30 02:36:30.266 -03:00 [INF] Setting HTTP status code 200.
+2025-09-30 02:36:30.274 -03:00 [INF] Writing value of type 'SearchResult`1' as Json.
+2025-09-30 02:36:30.279 -03:00 [INF] Executed endpoint 'HTTP: POST /search'
+2025-09-30 02:36:30.281 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7016/search - 200 null application/json; charset=utf-8 582.9331ms
+2025-09-30 02:37:08.570 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7016/jogo - application/json 87
+2025-09-30 02:37:08.630 -03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '30/09/2025 05:03:22', Current time (UTC): '30/09/2025 05:37:08'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-09-30 02:37:08.650 -03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '30/09/2025 05:03:22', Current time (UTC): '30/09/2025 05:37:08'.
+2025-09-30 02:37:08.656 -03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Administrador)
+2025-09-30 02:37:08.662 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-09-30 02:37:08.663 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7016/jogo - 401 0 null 93.705ms
+2025-09-30 02:37:27.358 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7016/jogo - application/json 87
+2025-09-30 02:37:27.373 -03:00 [INF] Executing endpoint 'HTTP: POST /jogo/'
+2025-09-30 02:37:27.693 -03:00 [WRN] No instantiatable types implementing `IEntityTypeConfiguration` were found while while scanning assembly 'System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e'.
+2025-09-30 02:37:27.797 -03:00 [WRN] No store type was specified for the decimal property 'Valor' on entity type 'Jogo'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-30 02:37:28.430 -03:00 [INF] Executed DbCommand (57ms) [Parameters=[@__nome_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [j].[Id], [j].[DataCriacao], [j].[Desconto], [j].[Descricao], [j].[Nome], [j].[Valor]
+FROM [Jogo] AS [j]
+WHERE [j].[Nome] = @__nome_0
+2025-09-30 02:37:28.719 -03:00 [INF] Executed DbCommand (18ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Jogo] ([DataCriacao], [Desconto], [Descricao], [Nome], [Valor])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-09-30 02:37:28.748 -03:00 [INF] Setting HTTP status code 200.
+2025-09-30 02:37:28.750 -03:00 [INF] Writing value of type 'JogoDTO' as Json.
+2025-09-30 02:37:28.753 -03:00 [INF] Executed endpoint 'HTTP: POST /jogo/'
+2025-09-30 02:37:28.760 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7016/jogo - 200 null application/json; charset=utf-8 1401.6635ms
+2025-09-30 02:37:32.377 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7016/search - application/json 49
+2025-09-30 02:37:32.381 -03:00 [INF] Executing endpoint 'HTTP: POST /search'
+2025-09-30 02:37:32.396 -03:00 [INF] Setting HTTP status code 200.
+2025-09-30 02:37:32.398 -03:00 [INF] Writing value of type 'SearchResult`1' as Json.
+2025-09-30 02:37:32.399 -03:00 [INF] Executed endpoint 'HTTP: POST /search'
+2025-09-30 02:37:32.401 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7016/search - 200 null application/json; charset=utf-8 23.7763ms
+2025-09-30 02:37:36.434 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7016/search - application/json 49
+2025-09-30 02:37:36.438 -03:00 [INF] Executing endpoint 'HTTP: POST /search'
+2025-09-30 02:37:36.451 -03:00 [INF] Setting HTTP status code 200.
+2025-09-30 02:37:36.452 -03:00 [INF] Writing value of type 'SearchResult`1' as Json.
+2025-09-30 02:37:36.454 -03:00 [INF] Executed endpoint 'HTTP: POST /search'
+2025-09-30 02:37:36.455 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7016/search - 200 null application/json; charset=utf-8 20.9123ms
+2025-09-30 02:37:51.421 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7016/search/reindex - null 0
+2025-09-30 02:37:51.425 -03:00 [INF] Executing endpoint 'HTTP: POST /search/reindex'
+2025-09-30 02:37:51.482 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [j].[Id], [j].[DataCriacao], [j].[Desconto], [j].[Descricao], [j].[Nome], [j].[Valor]
+FROM [Jogo] AS [j]
+2025-09-30 02:37:51.642 -03:00 [INF] Setting HTTP status code 200.
+2025-09-30 02:37:51.645 -03:00 [INF] Writing value of type '<>f__AnonymousType1`1' as Json.
+2025-09-30 02:37:51.647 -03:00 [INF] Executed endpoint 'HTTP: POST /search/reindex'
+2025-09-30 02:37:51.649 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7016/search/reindex - 200 null application/json; charset=utf-8 228.1116ms
+2025-09-30 02:37:54.729 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7016/search - application/json 49
+2025-09-30 02:37:54.733 -03:00 [INF] Executing endpoint 'HTTP: POST /search'
+2025-09-30 02:37:54.892 -03:00 [INF] Setting HTTP status code 200.
+2025-09-30 02:37:54.893 -03:00 [INF] Writing value of type 'SearchResult`1' as Json.
+2025-09-30 02:37:54.896 -03:00 [INF] Executed endpoint 'HTTP: POST /search'
+2025-09-30 02:37:54.898 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7016/search - 200 null application/json; charset=utf-8 168.8778ms
+2025-09-30 02:39:44.383 -03:00 [INF] User profile is available. Using 'C:\Users\gabri\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-30 02:39:44.711 -03:00 [INF] Now listening on: https://localhost:7016
+2025-09-30 02:39:44.713 -03:00 [INF] Now listening on: http://localhost:5124
+2025-09-30 02:39:44.719 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-09-30 02:39:44.766 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-30 02:39:44.767 -03:00 [INF] Hosting environment: Development
+2025-09-30 02:39:44.768 -03:00 [INF] Content root path: C:\Users\gabri\source\repos\8NETT\TechChallenge.Games\Src\TechChallenge.Games.Web
+2025-09-30 02:39:57.008 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7016/search - application/json 49
+2025-09-30 02:39:57.142 -03:00 [INF] Executing endpoint 'HTTP: POST /search'
+2025-09-30 02:39:57.249 -03:00 [INF] Setting HTTP status code 200.
+2025-09-30 02:39:57.254 -03:00 [INF] Writing value of type 'SearchResult`1' as Json.
+2025-09-30 02:39:57.262 -03:00 [INF] Executed endpoint 'HTTP: POST /search'
+2025-09-30 02:39:57.267 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7016/search - 200 null application/json; charset=utf-8 263.8734ms
