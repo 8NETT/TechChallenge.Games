@@ -1,5 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallenge.Games.Web", "Src\TechChallenge.Games.Web\TechChallenge.Games.Web.csproj", "{FEE6ABE0-7DEB-4A4C-A36C-839F45B69DB4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallenge.Games.Application", "Src\TechChallenge.Games.Application\TechChallenge.Games.Application.csproj", "{A3B8D858-8DB8-41C1-8071-2FAB0E22EA63}"
@@ -9,6 +12,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallenge.Games.Infrastructure", "Src\TechChallenge.Games.Infrastructure\TechChallenge.Games.Infrastructure.csproj", "{A401CA83-C73E-474F-97B0-C797849CCE7A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallenge.Games.Testes", "TechChallenge.Games.Testes\TechChallenge.Games.Testes.csproj", "{E0B303A3-C8FE-4D62-9498-2D5E8A204FB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallenge.Games.Command.Domain", "Src\TechChallenge.Games.Command.Domain\TechChallenge.Games.Command.Domain.csproj", "{F7A3C593-690B-57AC-1D4D-1965D8D303AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallenge.Games.Command.Infrastructure", "Src\TechChallenge.Games.Command.Infrastructure\TechChallenge.Games.Command.Infrastructure.csproj", "{AB7504AD-3494-B8A4-369C-D089215A56F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,5 +43,16 @@ Global
 		{E0B303A3-C8FE-4D62-9498-2D5E8A204FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0B303A3-C8FE-4D62-9498-2D5E8A204FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0B303A3-C8FE-4D62-9498-2D5E8A204FB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7A3C593-690B-57AC-1D4D-1965D8D303AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7A3C593-690B-57AC-1D4D-1965D8D303AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7A3C593-690B-57AC-1D4D-1965D8D303AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7A3C593-690B-57AC-1D4D-1965D8D303AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB7504AD-3494-B8A4-369C-D089215A56F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB7504AD-3494-B8A4-369C-D089215A56F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB7504AD-3494-B8A4-369C-D089215A56F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB7504AD-3494-B8A4-369C-D089215A56F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
