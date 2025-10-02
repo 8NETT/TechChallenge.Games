@@ -24,6 +24,19 @@ namespace TechChallenge.Games.Application.Services
             return jogos.Select(j => j.ToDTO());
         }
 
+        public async Task<Result<IEnumerable<JogoDTO>>> BuscarAsync(BuscarJogoDTO dto)
+        {
+            if (!TryValidate(dto, out var validationResult))
+                return validationResult;
+
+            var documents = await _queryRepository.BuscarAsync(dto.Termo, dto.Inicio, dto.Tamanho);
+
+            if (documents == null)
+                return Array.Empty<JogoDTO>();
+
+            return documents.Select(d => d.ToDTO()).ToArray();
+        }
+
         public async Task<Result<JogoDTO>> ObterPorIdAsync(Guid id)
         {
             var jogo = await _queryRepository.ObterPorIdAsync(id);

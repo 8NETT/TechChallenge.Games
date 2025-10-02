@@ -5,7 +5,7 @@ namespace TechChallenge.Games.Application.Contracts
 {
     public interface IJogoService : IDisposable
     {
-        Task<IEnumerable<JogoDTO>> BuscarAsync(string termo, int inicio, int tamanho);
+        Task<Result<IEnumerable<JogoDTO>>> BuscarAsync(BuscarJogoDTO dto);
         Task<Result<JogoDTO>> ObterPorIdAsync(Guid id);
         Task<Result<JogoDTO>> CadastrarAsync(CadastrarJogoDTO dto);
         Task<Result<JogoDTO>> AlterarDadosAsync(AlterarDadosDTO dto);
