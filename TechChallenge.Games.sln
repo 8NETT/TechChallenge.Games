@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallenge.Games.Web", "Src\TechChallenge.Games.Web\TechChallenge.Games.Web.csproj", "{FEE6ABE0-7DEB-4A4C-A36C-839F45B69DB4}"
 EndProject
@@ -16,6 +16,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallenge.Games.Command.Domain", "Src\TechChallenge.Games.Command.Domain\TechChallenge.Games.Command.Domain.csproj", "{F7A3C593-690B-57AC-1D4D-1965D8D303AF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallenge.Games.Command.Infrastructure", "Src\TechChallenge.Games.Command.Infrastructure\TechChallenge.Games.Command.Infrastructure.csproj", "{AB7504AD-3494-B8A4-369C-D089215A56F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallenge.Games.Query.Domain", "Src\TechChallenge.Games.Query.Domain\TechChallenge.Games.Query.Domain.csproj", "{AC15CA5B-B41E-4BFC-9D59-0307EFE6308D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallenge.Games.Query.Infrastructure", "Src\TechChallenge.Games.Query.Infrastructure\TechChallenge.Games.Query.Infrastructure.csproj", "{4C83EADE-7359-4CCC-8995-8AA5658F3E8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,8 +55,19 @@ Global
 		{AB7504AD-3494-B8A4-369C-D089215A56F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB7504AD-3494-B8A4-369C-D089215A56F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB7504AD-3494-B8A4-369C-D089215A56F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC15CA5B-B41E-4BFC-9D59-0307EFE6308D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC15CA5B-B41E-4BFC-9D59-0307EFE6308D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC15CA5B-B41E-4BFC-9D59-0307EFE6308D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC15CA5B-B41E-4BFC-9D59-0307EFE6308D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C83EADE-7359-4CCC-8995-8AA5658F3E8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C83EADE-7359-4CCC-8995-8AA5658F3E8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C83EADE-7359-4CCC-8995-8AA5658F3E8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C83EADE-7359-4CCC-8995-8AA5658F3E8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5805A157-F01F-4E74-A194-BE4ED83F2005}
 	EndGlobalSection
 EndGlobal

@@ -4,6 +4,10 @@ using TechChallenge.Games.Command.Infrastructure.Persistence;
 using TechChallenge.Games.Command.Domain.Persistence;
 using TechChallenge.Games.Query.Domain.Persistence;
 using TechChallenge.Games.Query.Infrastructure.Persistence;
+using TechChallenge.Games.Application.Contracts;
+using TechChallenge.Games.Command.Infrastructure.Producers;
+using Microsoft.Extensions.Azure;
+using TechChallenge.Games.Query.Infrastructure.Consumers;
 
 namespace TechChallenge.Games.Web.Configurations
 {
@@ -42,9 +46,37 @@ namespace TechChallenge.Games.Web.Configurations
             builder.Services.AddScoped<IJogoQueryRepository, JogoQueryRepository>(f =>
             {
                 var client = f.GetRequiredService<ElasticsearchClient>();
-                var index = builder.Configuration["Elasticsearch:IndexName"];
+                var indexName = builder.Configuration["Elasticsearch:IndexName"];
+
+                if (string.IsNullOrWhiteSpace(indexName))
+                    throw new InvalidOperationException("Nome do índice do Elasticsearch não localizado no arquivo de configuração.");
 
                 return new JogoQueryRepository(client, indexName);
+            });
+
+            builder.Services.AddScoped<IJogoProducer, AzureEventHubProducer>(f =>
+            {
+                var connectionString = builder.Configuration["AzureEventHub:ConnectionString"];
+                var eventHubName = builder.Configuration["AzureEventHub:HubName"];
+
+                if (string.IsNullOrWhiteSpace(connectionString) || string.IsNullOrWhiteSpace(eventHubName))
+                    throw new InvalidOperationException("Configuração do hub de eventos não localizado no arquivo de configuração.");
+
+                return new AzureEventHubProducer(connectionString, eventHubName);
+            });
+
+            builder.Services.AddHostedService(s =>
+            {
+                var connectionString = builder.Configuration["AzureEventHub:ConnectionString"];
+                var eventHubName = builder.Configuration["AzureEventHub:HubName"];
+                var consumerGroup = builder.Configuration["AzureEventHub:ConsumerGroup"];
+
+                if (string.IsNullOrWhiteSpace(connectionString) ||
+                    string.IsNullOrWhiteSpace(eventHubName) ||
+                    string.IsNullOrWhiteSpace(consumerGroup))
+                    throw new InvalidOperationException("Configuração do hub de eventos não localizado no arquivo de configuração.");
+
+                return new AzureEventHubConsumer(s, consumerGroup, connectionString, eventHubName);
             });
         }
     }

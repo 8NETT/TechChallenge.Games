@@ -10,20 +10,24 @@ namespace TechChallenge.Games.Application.Mappers
         {
             Id = entidade.Id,
             Nome = entidade.Nome,
+            Descricao = entidade.Descricao,
             DataLancamento = entidade.DataLancamento,
             Preco = entidade.Valor,
             Desconto = entidade.Desconto,
-            Valor = entidade.Valor
+            Valor = entidade.Valor,
+            Deletado = entidade.Deletado
         };
 
         public static JogoDTO ToDTO(this JogoDocument document) => new JogoDTO
         {
             Id = document.Id,
             Nome = document.Nome,
+            Descricao = document.Descricao,
             DataLancamento = document.DataLancamento,
             Preco = document.Preco,
             Desconto = document.Desconto,
-            Valor = document.Valor
+            Valor = document.Valor,
+            Deletado = document.Deletado
         };
 
         public static Jogo ToEntity(this CadastrarJogoDTO dto) => Jogo.Novo

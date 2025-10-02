@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Azure.Messaging.EventHubs" Version="5.12.2" />
     <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.53.1" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="9.0.9" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
@@ -15,10 +16,6 @@
   <ItemGroup>
     <ProjectReference Include="..\TechChallenge.Games.Application\TechChallenge.Games.Application.csproj" />
     <ProjectReference Include="..\TechChallenge.Games.Command.Domain\TechChallenge.Games.Command.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Producers\" />
   </ItemGroup>
 
 </Project>

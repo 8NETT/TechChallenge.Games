@@ -9,5 +9,6 @@
         public decimal Preco { get; set; }
         public int Desconto { get; set; }
         public decimal Valor { get; set; }
+        public bool Deletado { get; set; }
     }
 }

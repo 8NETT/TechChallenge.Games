@@ -11,11 +11,16 @@ namespace TechChallenge.Games.Application.Services
     {
         private JogoCommandRepository _commandRepository;
         private IJogoQueryRepository _queryRepository;
+        private IJogoProducer _producer;
 
-        public JogoService(JogoCommandRepository commandRepository, IJogoQueryRepository queryRepository)
+        public JogoService(
+            JogoCommandRepository commandRepository, 
+            IJogoQueryRepository queryRepository,
+            IJogoProducer producer)
         {
             _commandRepository = commandRepository;
             _queryRepository = queryRepository;
+            _producer = producer;
         }
 
         public async Task<IEnumerable<JogoDTO>> ObterTodosAsync(int inicio, int tamanho)
@@ -58,7 +63,10 @@ namespace TechChallenge.Games.Application.Services
             var jogo = dto.ToEntity();
             await _commandRepository.SalvarAsync(jogo);
 
-            return jogo.ToDTO();
+            var result = jogo.ToDTO();
+            await _producer.ProduceAsync(result);
+
+            return result;
         }
 
         public async Task<Result<JogoDTO>> AlterarDadosAsync(AlterarDadosDTO dto)
@@ -76,7 +84,10 @@ namespace TechChallenge.Games.Application.Services
             jogo.AlterarDados(dto.Nome, dto.Descricao, dto.DataLancamento);
             await _commandRepository.SalvarAsync(jogo);
 
-            return jogo.ToDTO();
+            var result = jogo.ToDTO();
+            await _producer.ProduceAsync(result);
+
+            return result;
         }
 
         public async Task<Result<JogoDTO>> AlterarPrecoAsync(AlterarPrecoDTO dto)
@@ -89,7 +100,10 @@ namespace TechChallenge.Games.Application.Services
             jogo.AlterarPreco(dto.NovoPreco);
             await _commandRepository.SalvarAsync(jogo);
 
-            return jogo.ToDTO();
+            var result = jogo.ToDTO();
+            await _producer.ProduceAsync(result);
+
+            return result;
         }
 
         public async Task<Result<JogoDTO>> AplicarDescontoAsync(AplicarDescontoDTO dto)
@@ -102,7 +116,10 @@ namespace TechChallenge.Games.Application.Services
             jogo.AplicarDesconto(dto.Desconto);
             await _commandRepository.SalvarAsync(jogo);
 
-            return jogo.ToDTO();
+            var result = jogo.ToDTO();
+            await _producer.ProduceAsync(result);
+
+            return result;
         }
 
         public async Task<Result> DeletarAsync(Guid id)
@@ -114,6 +131,7 @@ namespace TechChallenge.Games.Application.Services
 
             jogo.Remover();
             await _commandRepository.SalvarAsync(jogo);
+            await _producer.ProduceAsync(jogo.ToDTO());
 
             return Result.Success();
         }
