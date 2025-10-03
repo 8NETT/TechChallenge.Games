@@ -6,7 +6,6 @@ using TechChallenge.Games.Query.Domain.Persistence;
 using TechChallenge.Games.Query.Infrastructure.Persistence;
 using TechChallenge.Games.Application.Contracts;
 using TechChallenge.Games.Command.Infrastructure.Producers;
-using Microsoft.Extensions.Azure;
 using TechChallenge.Games.Query.Infrastructure.Consumers;
 
 namespace TechChallenge.Games.Web.Configurations
@@ -15,20 +14,31 @@ namespace TechChallenge.Games.Web.Configurations
     {
         public static void AddInfrastructureConfiguration(this WebApplicationBuilder builder)
         {
-            var config = builder.Configuration;
-            builder.Services.Configure<CosmosConfig>(config.GetSection(nameof(CosmosConfig)));
-            builder.Services.AddScoped<IEventStore, CosmosEventStore>();
+            builder.AddEventStoreConfiguration();
+            builder.AddElasticsearchConfiguration();
+            builder.AddQueryRepositoryConfiguration();
+            builder.AddProducerConfiguration();
+            builder.AddConsumerConfiguration();
+        }
 
+        public static void AddEventStoreConfiguration(this WebApplicationBuilder builder)
+        {
+            builder.Services.Configure<CosmosConfig>(builder.Configuration.GetSection(nameof(CosmosConfig)));
+            builder.Services.AddScoped<IEventStore, CosmosEventStore>();
+        }
+
+        public static void AddElasticsearchConfiguration(this WebApplicationBuilder builder)
+        {
             if (builder.Environment.IsDevelopment())
             {
-                var username = config["Elasticsearch:Username"];
-                var password = config["Elasticsearch:Password"];
+                var username = builder.Configuration["Elasticsearch:Username"];
+                var password = builder.Configuration["Elasticsearch:Password"];
 
                 if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
                     throw new InvalidOperationException(
                         "Username ou Password do Elasticsearch não localizado no arquivo de configuração.");
 
-                var settings = new ElasticsearchClientSettings(new Uri(config["Elasticsearch:Url"] ?? string.Empty))
+                var settings = new ElasticsearchClientSettings(new Uri(builder.Configuration["Elasticsearch:Url"] ?? string.Empty))
                     .Authentication(new BasicAuthentication(username, password));
 
                 builder.Services.AddSingleton(new ElasticsearchClient(settings));
@@ -42,7 +52,10 @@ namespace TechChallenge.Games.Web.Configurations
                     new ElasticsearchClientSettings(cloudId ?? string.Empty, new ApiKey(apiKey ?? string.Empty));
                 builder.Services.AddSingleton(new ElasticsearchClient(settings));
             }
+        }
 
+        public static void AddQueryRepositoryConfiguration(this WebApplicationBuilder builder)
+        {
             builder.Services.AddScoped<IJogoQueryRepository, JogoQueryRepository>(f =>
             {
                 var client = f.GetRequiredService<ElasticsearchClient>();
@@ -53,7 +66,10 @@ namespace TechChallenge.Games.Web.Configurations
 
                 return new JogoQueryRepository(client, indexName);
             });
+        }
 
+        public static void AddProducerConfiguration(this WebApplicationBuilder builder)
+        {
             builder.Services.AddScoped<IJogoProducer, AzureEventHubProducer>(f =>
             {
                 var connectionString = builder.Configuration["AzureEventHub:ConnectionString"];
@@ -64,7 +80,10 @@ namespace TechChallenge.Games.Web.Configurations
 
                 return new AzureEventHubProducer(connectionString, eventHubName);
             });
+        }
 
+        public static void AddConsumerConfiguration(this WebApplicationBuilder builder)
+        {
             builder.Services.AddHostedService(s =>
             {
                 var connectionString = builder.Configuration["AzureEventHub:ConnectionString"];
