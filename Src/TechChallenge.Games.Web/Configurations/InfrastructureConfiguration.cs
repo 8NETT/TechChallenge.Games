@@ -25,33 +25,20 @@ namespace TechChallenge.Games.Web.Configurations
         {
             builder.Services.Configure<CosmosConfig>(builder.Configuration.GetSection(nameof(CosmosConfig)));
             builder.Services.AddScoped<IEventStore, CosmosEventStore>();
+            builder.Services.AddScoped<JogoCommandRepository>();
         }
 
         public static void AddElasticsearchConfiguration(this WebApplicationBuilder builder)
         {
-            if (builder.Environment.IsDevelopment())
-            {
-                var username = builder.Configuration["Elasticsearch:Username"];
-                var password = builder.Configuration["Elasticsearch:Password"];
+            var cloudId = builder.Configuration["Elasticsearch:CloudId"];
+            var apiKey = builder.Configuration["Elasticsearch:ApiKey"];
 
-                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-                    throw new InvalidOperationException(
-                        "Username ou Password do Elasticsearch não localizado no arquivo de configuração.");
+            if (string.IsNullOrWhiteSpace(cloudId) || string.IsNullOrWhiteSpace(apiKey))
+                throw new InvalidOperationException("Cloud ID e/ou API Key do Elasticsearch não localizado no arquivo de configuração.");
 
-                var settings = new ElasticsearchClientSettings(new Uri(builder.Configuration["Elasticsearch:Url"] ?? string.Empty))
-                    .Authentication(new BasicAuthentication(username, password));
-
-                builder.Services.AddSingleton(new ElasticsearchClient(settings));
-            }
-            else
-            {
-                var cloudId = builder.Configuration["Elasticsearch:CloudId"];
-                var apiKey = builder.Configuration["Elasticsearch:ApiKey"];
-
-                var settings =
-                    new ElasticsearchClientSettings(cloudId ?? string.Empty, new ApiKey(apiKey ?? string.Empty));
-                builder.Services.AddSingleton(new ElasticsearchClient(settings));
-            }
+            var settings = new ElasticsearchClientSettings(new Uri(cloudId))
+                .Authentication(new ApiKey(apiKey));
+            builder.Services.AddSingleton(new ElasticsearchClient(settings));
         }
 
         public static void AddQueryRepositoryConfiguration(this WebApplicationBuilder builder)

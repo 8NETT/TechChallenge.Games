@@ -27,35 +27,37 @@ namespace TechChallenge.Games.Query.Infrastructure.Consumers
             _serviceProvider = serviceProvider;
         }
 
-        public async Task StartAsync(CancellationToken cancellationToken)
+        public Task StartAsync(CancellationToken cancellationToken)
         {
             _cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
-
-            await foreach (var @event in _client.ReadEventsAsync(cancellationToken))
+            _ = Task.Run(async () =>
             {
-                if (@event.Data == null)
-                    continue;
+                await foreach (var @event in _client.ReadEventsAsync(cancellationToken))
+                {
+                    if (@event.Data == null)
+                        continue;
 
-                var json = Encoding.UTF8.GetString(@event.Data.EventBody.ToArray());
-                var dto = JsonConvert.DeserializeObject<JogoDTO>(json);
+                    var json = Encoding.UTF8.GetString(@event.Data.EventBody.ToArray());
+                    var dto = JsonConvert.DeserializeObject<JogoDTO>(json);
 
-                if (dto == null)
-                    continue;
+                    if (dto == null)
+                        continue;
 
-                var document = dto.ToDocument();
-                using var scope = _serviceProvider.CreateScope();
-                var repository = scope.ServiceProvider.GetRequiredService<IJogoQueryRepository>();
+                    var document = dto.ToDocument();
+                    using var scope = _serviceProvider.CreateScope();
+                    var repository = scope.ServiceProvider.GetRequiredService<IJogoQueryRepository>();
 
-                await repository.UpsertAsync(document);
-            }
+                    await repository.UpsertAsync(document);
+                }
+            }, _cts.Token);
+
+            return Task.CompletedTask;
         }
 
-        public async Task StopAsync(CancellationToken cancellationToken)
+        public Task StopAsync(CancellationToken cancellationToken)
         {
-            if (_cts == null)
-                return;
-
-            await _cts.CancelAsync();
+            _cts?.Cancel();
+            return Task.CompletedTask;
         }
 
         public async ValueTask DisposeAsync() =>

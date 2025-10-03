@@ -17,11 +17,11 @@ public static class SearchEndpoints
         //    .WithName("ReindexJogos")
         //    .WithSummary("Reindexa todos os jogos do SQL para o Elasticsearch");
 
-        app.MapPost("/search", async (IJogoService jogos, [FromBody] SearchRequest request) =>
+        app.MapPost("/search", async (IJogoService jogos, [FromBody] BuscarJogoDTO dto) =>
         {
             try
             {
-                var result = await jogos.BuscarAsync(request.Termo, request.From, request.Size);
+                var result = await jogos.BuscarAsync(dto);
                 return Results.Ok(result);
             }
             catch (Exception e)
