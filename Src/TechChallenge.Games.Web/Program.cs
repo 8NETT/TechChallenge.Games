@@ -1,4 +1,3 @@
-using Elastic.Clients.Elasticsearch;
 using TechChallenge.Games.Endpoints;
 using TechChallenge.Games.Web.Configurations;
 using TechChallenge.Games.Web.Endpoints;
@@ -27,8 +26,8 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
-//app.UseAuthentication();
-//app.UseAuthorization();
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapJogoEndpoints();
 app.MapSearchEndpoints();

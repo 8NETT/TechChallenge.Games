@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using TechChallenge.Games.Application.Contracts;
 using TechChallenge.Games.Application.DTOs;
-using TechChallenge.Games.Core.Documents;
 
 namespace TechChallenge.Games.Web.Endpoints;
 
@@ -33,7 +32,7 @@ public static class SearchEndpoints
             .WithOpenApi()
             .WithName("SearchJogos")
             .WithSummary("Busca jogos no Elasticsearch")
-            .Produces<SearchResult<JogoDocument>>(StatusCodes.Status200OK);
+            .Produces<IEnumerable<JogoDTO>>(StatusCodes.Status200OK);
 
         return app;
     }

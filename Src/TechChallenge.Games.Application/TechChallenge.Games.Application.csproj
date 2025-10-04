@@ -20,9 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\TechChallenge.Games.Query.Domain\TechChallenge.Games.Query.Domain.csproj" />
+    <ProjectReference Include="..\TechChallenge.Games.Query.Domain\TechChallenge.Games.Query.Domain.csproj" />
     <ProjectReference Include="..\TechChallenge.Games.Command.Domain\TechChallenge.Games.Command.Domain.csproj" />
-    <ProjectReference Include="..\TechChallenge.Games.Core\TechChallenge.Games.Core.csproj" />
     <ProjectReference Include="..\TechChallenge.Games.Query.Domain\TechChallenge.Games.Query.Domain.csproj" />
   </ItemGroup>
 
