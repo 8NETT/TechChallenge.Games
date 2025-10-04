@@ -1,10 +1,12 @@
 ﻿using Elastic.Clients.Elasticsearch;
 using Elastic.Transport;
-using TechChallenge.Games.Core.Repository;
-using TechChallenge.Games.Infrastructure.Repository;
-using Microsoft.EntityFrameworkCore;
+using TechChallenge.Games.Command.Infrastructure.Persistence;
+using TechChallenge.Games.Command.Domain.Persistence;
+using TechChallenge.Games.Query.Domain.Persistence;
+using TechChallenge.Games.Query.Infrastructure.Persistence;
 using TechChallenge.Games.Application.Contracts;
-using TechChallenge.Games.Infrastructure.Search;
+using TechChallenge.Games.Command.Infrastructure.Producers;
+using TechChallenge.Games.Query.Infrastructure.Consumers;
 
 namespace TechChallenge.Games.Web.Configurations
 {
@@ -12,46 +14,76 @@ namespace TechChallenge.Games.Web.Configurations
     {
         public static void AddInfrastructureConfiguration(this WebApplicationBuilder builder)
         {
-            var config = builder.Configuration;
+            builder.AddEventStoreConfiguration();
+            builder.AddElasticsearchConfiguration();
+            builder.AddQueryRepositoryConfiguration();
+            builder.AddProducerConfiguration();
+            builder.AddConsumerConfiguration();
+        }
 
+        public static void AddEventStoreConfiguration(this WebApplicationBuilder builder)
+        {
+            builder.Services.Configure<CosmosConfig>(builder.Configuration.GetSection(nameof(CosmosConfig)));
+            builder.Services.AddScoped<IEventStore, CosmosEventStore>();
+            builder.Services.AddScoped<JogoCommandRepository>();
+        }
 
+        public static void AddElasticsearchConfiguration(this WebApplicationBuilder builder)
+        {
+            var cloudId = builder.Configuration["Elasticsearch:CloudId"];
+            var apiKey = builder.Configuration["Elasticsearch:ApiKey"];
 
-            var connectionString = config.GetConnectionString("ConnectionString")
-                                   ?? throw new InvalidOperationException(
-                                       "ConnectionString não localizada no arquivo de configuração.");
+            if (string.IsNullOrWhiteSpace(cloudId) || string.IsNullOrWhiteSpace(apiKey))
+                throw new InvalidOperationException("Cloud ID e/ou API Key do Elasticsearch não localizado no arquivo de configuração.");
 
-            builder.Services.AddDbContext<ApplicationDbContext>(
-                options => { options.UseSqlServer(connectionString); }, ServiceLifetime.Scoped);
+            var settings = new ElasticsearchClientSettings(new Uri(cloudId))
+                .Authentication(new ApiKey(apiKey));
+            builder.Services.AddSingleton(new ElasticsearchClient(settings));
+        }
 
-            if (builder.Environment.IsDevelopment())
+        public static void AddQueryRepositoryConfiguration(this WebApplicationBuilder builder)
+        {
+            builder.Services.AddScoped<IJogoQueryRepository, JogoQueryRepository>(f =>
             {
-                var username = config["Elasticsearch:Username"];
-                var password = config["Elasticsearch:Password"];
+                var client = f.GetRequiredService<ElasticsearchClient>();
+                var indexName = builder.Configuration["Elasticsearch:IndexName"];
 
-                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-                    throw new InvalidOperationException(
-                        "Username ou Password do Elasticsearch não localizado no arquivo de configuração.");
+                if (string.IsNullOrWhiteSpace(indexName))
+                    throw new InvalidOperationException("Nome do índice do Elasticsearch não localizado no arquivo de configuração.");
 
-                var settings = new ElasticsearchClientSettings(new Uri(config["Elasticsearch:Url"] ?? string.Empty))
-                    .Authentication(new BasicAuthentication(username, password));
+                return new JogoQueryRepository(client, indexName);
+            });
+        }
 
-                builder.Services.AddSingleton(new ElasticsearchClient(settings));
-            }
-            else
+        public static void AddProducerConfiguration(this WebApplicationBuilder builder)
+        {
+            builder.Services.AddScoped<IJogoProducer, AzureEventHubProducer>(f =>
             {
-                var cloudId = builder.Configuration["Elasticsearch:CloudId"];
-                var apiKey = builder.Configuration["Elasticsearch:ApiKey"];
+                var connectionString = builder.Configuration["AzureEventHub:ConnectionString"];
+                var eventHubName = builder.Configuration["AzureEventHub:HubName"];
 
-                var settings =
-                    new ElasticsearchClientSettings(cloudId ?? string.Empty, new ApiKey(apiKey ?? string.Empty));
-                builder.Services.AddSingleton<ElasticsearchClient>(new ElasticsearchClient(settings));
-            }
+                if (string.IsNullOrWhiteSpace(connectionString) || string.IsNullOrWhiteSpace(eventHubName))
+                    throw new InvalidOperationException("Configuração do hub de eventos não localizado no arquivo de configuração.");
 
+                return new AzureEventHubProducer(connectionString, eventHubName);
+            });
+        }
 
-            builder.Services.AddScoped<IJogoRepository, JogoRepository>();
-            builder.Services.AddScoped<IJogoSearch, JogoSearch>();
-            builder.Services.AddScoped<ISearchJogos, SearchJogos>();
-            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+        public static void AddConsumerConfiguration(this WebApplicationBuilder builder)
+        {
+            builder.Services.AddHostedService(s =>
+            {
+                var connectionString = builder.Configuration["AzureEventHub:ConnectionString"];
+                var eventHubName = builder.Configuration["AzureEventHub:HubName"];
+                var consumerGroup = builder.Configuration["AzureEventHub:ConsumerGroup"];
+
+                if (string.IsNullOrWhiteSpace(connectionString) ||
+                    string.IsNullOrWhiteSpace(eventHubName) ||
+                    string.IsNullOrWhiteSpace(consumerGroup))
+                    throw new InvalidOperationException("Configuração do hub de eventos não localizado no arquivo de configuração.");
+
+                return new AzureEventHubConsumer(s, consumerGroup, connectionString, eventHubName);
+            });
         }
     }
 }

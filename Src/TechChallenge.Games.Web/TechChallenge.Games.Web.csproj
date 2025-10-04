@@ -5,15 +5,27 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>TechChallenge.Games.Web</RootNamespace>
+        <UserSecretsId>7bb22b06-447c-43d0-9bf4-e3f37f046647</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.9"/>
+        <PackageReference Include="Elastic.Clients.Elasticsearch" Version="9.1.9" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.9" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.9" />
+        <PackageReference Include="Serilog" Version="4.3.0" />
+        <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+        <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+        <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.6" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="9.0.6" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\TechChallenge.Games.Application\TechChallenge.Games.Application.csproj" />
-      <ProjectReference Include="..\TechChallenge.Games.Infrastructure\TechChallenge.Games.Infrastructure.csproj" />
+      <ProjectReference Include="..\TechChallenge.Games.Command.Domain\TechChallenge.Games.Command.Domain.csproj" />
+      <ProjectReference Include="..\TechChallenge.Games.Command.Infrastructure\TechChallenge.Games.Command.Infrastructure.csproj" />
+      <ProjectReference Include="..\TechChallenge.Games.Query.Domain\TechChallenge.Games.Query.Domain.csproj" />
+      <ProjectReference Include="..\TechChallenge.Games.Query.Infrastructure\TechChallenge.Games.Query.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

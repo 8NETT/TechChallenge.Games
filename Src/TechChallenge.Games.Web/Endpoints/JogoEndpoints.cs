@@ -1,5 +1,6 @@
 using System.Net;
 using Ardalis.Result;
+using Microsoft.AspNetCore.Mvc;
 using TechChallenge.Games.Application.Contracts;
 using TechChallenge.Games.Application.DTOs;
 
@@ -13,28 +14,28 @@ public static class JogoEndpoints
             .RequireAuthorization(); // substitui [Authorize] no controller
 
         // GET: /jogo
-        jogos.MapGet("/", async (IJogoService jogoService) =>
-        {
-            try
-            {
-                return Results.Ok(await jogoService.ObterTodosAsync());
-            }
-            catch (Exception e)
-            {
-                return Results.BadRequest(new { error = e.Message });
-            }
-        })
-        .WithOpenApi(op => new(op)
-        {
-            OperationId = "GetJogoAsync",
-            Summary = "Jogos listados com sucesso",
-            Description = "Retorna todos os jogos cadastrados"
-        })
-        .Produces((int)HttpStatusCode.OK)
-        .Produces((int)HttpStatusCode.BadRequest);
+        //jogos.MapGet("/", async (IJogoService jogoService) =>
+        //{
+        //    try
+        //    {
+        //        return Results.Ok(await jogoService.ObterTodosAsync());
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return Results.BadRequest(new { error = e.Message });
+        //    }
+        //})
+        //.WithOpenApi(op => new(op)
+        //{
+        //    OperationId = "GetJogoAsync",
+        //    Summary = "Jogos listados com sucesso",
+        //    Description = "Retorna todos os jogos cadastrados"
+        //})
+        //.Produces((int)HttpStatusCode.OK)
+        //.Produces((int)HttpStatusCode.BadRequest);
 
         // GET: /jogo/{id}
-        jogos.MapGet("/{id:int}", async (int id, IJogoService jogoService) =>
+        jogos.MapGet("/{id:Guid}", async ([FromRoute] Guid id, IJogoService jogoService) =>
         {
             try
             {
@@ -91,11 +92,11 @@ public static class JogoEndpoints
         .Produces((int)HttpStatusCode.BadRequest);
 
         // PUT: /jogo
-        jogos.MapPut("/", async (AlterarJogoDTO dto, IJogoService jogoService) =>
+        jogos.MapPut("/", async (AlterarDadosDTO dto, IJogoService jogoService) =>
         {
             try
             {
-                var result = await jogoService.AlterarAsync(dto);
+                var result = await jogoService.AlterarDadosAsync(dto);
 
                 if (result.IsInvalid())
                     return Results.BadRequest(result.Errors);
@@ -124,7 +125,7 @@ public static class JogoEndpoints
         .Produces((int)HttpStatusCode.BadRequest);
 
         // DELETE: /jogo/{id}
-        jogos.MapDelete("/{id:int}", async (int id, IJogoService jogoService) =>
+        jogos.MapDelete("/{id:Guid}", async (Guid id, IJogoService jogoService) =>
         {
             try
             {
