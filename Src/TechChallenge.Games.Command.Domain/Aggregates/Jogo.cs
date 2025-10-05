@@ -27,7 +27,7 @@ namespace TechChallenge.Games.Command.Domain.Aggregates
 
         #region Métodos Públicos
 
-        public void AlterarDados(string? nome, string? descricao, DateTime? dataLancamento)
+        public void AlterarDados(string? nome = null, string? descricao = null, DateTime? dataLancamento = null)
         {
             if (string.IsNullOrWhiteSpace(nome) && string.IsNullOrWhiteSpace(descricao) && dataLancamento == null)
                 throw new ArgumentException("Pelo menos um dos parâmetros deve ser fornecido para alterar os dados do jogo.");
