@@ -1,0 +1,195 @@
+﻿using Moq;
+using TechChallenge.Games.Application.DTOs;
+using TechChallenge.Games.Command.Domain.Aggregates;
+using TechChallenge.Games.Query.Domain.Documents;
+
+namespace TechChallenge.Games.Application.Testes.Services
+{
+    public class JogoServiceTest : IClassFixture<JogoServiceFixture>
+    {
+        private readonly JogoServiceFixture _fixture;
+
+        public JogoServiceTest(JogoServiceFixture fixture)
+        {
+            _fixture = fixture;
+        }
+
+        [Fact]
+        public async Task ObterTodosAsync_Sucesso()
+        {
+            // Arrange
+            var jogo = new JogoDocument
+            {
+                Id = Guid.NewGuid(),
+                Nome = "Teste",
+                DataLancamento = DateTime.Today,
+                Preco = 100M,
+                Desconto = 0,
+                Valor = 100M
+            };
+            _fixture.QueryRepository.Setup(r => r.ObterTodosAsync(0, 10))
+                .ReturnsAsync([jogo]);
+
+            // Act
+            var result = await _fixture.Service.ObterTodosAsync(0, 10);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.NotEmpty(result);
+            Assert.Equal(jogo.Id, result.First().Id);
+        }
+
+        [Fact]
+        public async Task BuscarAsync_Sucesso()
+        {
+            // Arrange
+            var dto = new BuscarJogoDTO
+            {
+                Termo = "Teste",
+                Inicio = 0,
+                Tamanho = 10
+            };
+            _fixture.QueryRepository.Setup(r => r.BuscarAsync(dto.Termo, dto.Inicio, dto.Tamanho))
+                .ReturnsAsync(new List<JogoDocument>
+                {
+                    new JogoDocument
+                    {
+                        Id = Guid.NewGuid(),
+                        Nome = "Teste",
+                        DataLancamento = DateTime.Today,
+                        Preco = 100M,
+                        Desconto = 0,
+                        Valor = 100M
+                    }
+                });
+
+            // Act
+            var result = await _fixture.Service.BuscarAsync(dto);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.True(result.IsSuccess);
+            Assert.NotEmpty(result.Value);
+        }
+
+        [Fact]
+        public async Task BuscarAsync_TermoVazio()
+        {
+            // Arrange
+            var dto = new BuscarJogoDTO
+            {
+                Inicio = 0,
+                Tamanho = 10
+            };
+
+            // Act
+            var result = await _fixture.Service.BuscarAsync(dto);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.True(result.IsSuccess);
+        }
+
+        [Fact]
+        public async Task BuscarAsync_InicioNegativo()
+        {
+            // Arrange
+            var dto = new BuscarJogoDTO
+            {
+                Termo = "Teste",
+                Inicio = -1,
+                Tamanho = 10
+            };
+
+            // Act
+            var result = await _fixture.Service.BuscarAsync(dto);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.False(result.IsSuccess);
+        }
+
+        [Fact]
+        public async Task BuscarAsync_TamanhoInvalido()
+        {
+            // Arrange
+            var dto = new BuscarJogoDTO
+            {
+                Termo = "Teste",
+                Inicio = 0,
+                Tamanho = 0
+            };
+
+            // Act
+            var result = await _fixture.Service.BuscarAsync(dto);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.False(result.IsSuccess);
+        }
+
+        [Fact]
+        public async Task CadastrarAsync_Sucesso()
+        {
+            // Arrange
+            var dto = new CadastrarJogoDTO
+            {
+                Nome = "Teste",
+                DataLancamento = DateTime.Today,
+                Preco = 100M
+            };
+            _fixture.QueryRepository.Setup(r => r.BuscarAsync(dto.Nome, 0, 1))
+                .ReturnsAsync(Array.Empty<JogoDocument>());
+            _fixture.CommandRepository.Setup(r => r.SalvarAsync(It.IsAny<Jogo>()));
+            _fixture.Producer.Setup(p => p.ProduceAsync(It.IsAny<JogoDTO>()))
+                .Returns(Task.CompletedTask);
+
+            // Act
+            var result = await _fixture.Service.CadastrarAsync(dto);
+            var jogo = result.Value;
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.True(result.IsSuccess);
+            Assert.Equal(dto.Nome, jogo.Nome);
+        }
+
+        [Fact]
+        public async Task CadastrarAsync_NomeVazio()
+        {
+            // Arrange
+            var dto = new CadastrarJogoDTO
+            {
+                Nome = string.Empty,
+                DataLancamento = DateTime.Today,
+                Preco = 100M
+            };
+
+            // Act
+            var result = await _fixture.Service.CadastrarAsync(dto);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.False(result.IsSuccess);
+        }
+
+        [Fact]
+        public async Task CadastrarAsync_PrecoNegativo()
+        {
+            // Arrange
+            var dto = new CadastrarJogoDTO
+            {
+                Nome = "Teste",
+                DataLancamento = DateTime.Today,
+                Preco = -100M
+            };
+
+            // Act
+            var result = await _fixture.Service.CadastrarAsync(dto);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.False(result.IsSuccess);
+        }
+    }
+}

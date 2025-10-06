@@ -9,12 +9,12 @@ namespace TechChallenge.Games.Application.Services
 {
     public class JogoService : BaseService, IJogoService
     {
-        private JogoCommandRepository _commandRepository;
+        private IJogoCommandRepository _commandRepository;
         private IJogoQueryRepository _queryRepository;
         private IJogoProducer _producer;
 
         public JogoService(
-            JogoCommandRepository commandRepository, 
+            IJogoCommandRepository commandRepository, 
             IJogoQueryRepository queryRepository,
             IJogoProducer producer)
         {

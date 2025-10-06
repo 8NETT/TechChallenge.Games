@@ -25,7 +25,7 @@ namespace TechChallenge.Games.Web.Configurations
         {
             builder.Services.Configure<CosmosConfig>(builder.Configuration.GetSection(nameof(CosmosConfig)));
             builder.Services.AddScoped<IEventStore, CosmosEventStore>();
-            builder.Services.AddScoped<JogoCommandRepository>();
+            builder.Services.AddScoped<IJogoCommandRepository, JogoCommandRepository>();
         }
 
         public static void AddElasticsearchConfiguration(this WebApplicationBuilder builder)

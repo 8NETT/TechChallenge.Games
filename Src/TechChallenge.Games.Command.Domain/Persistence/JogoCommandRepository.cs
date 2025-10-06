@@ -2,7 +2,7 @@
 
 namespace TechChallenge.Games.Command.Domain.Persistence
 {
-    public sealed class JogoCommandRepository : IDisposable
+    public sealed class JogoCommandRepository : IJogoCommandRepository, IDisposable
     {
         private readonly IEventStore _eventStore;
 
