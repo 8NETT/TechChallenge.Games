@@ -9,12 +9,12 @@ namespace TechChallenge.Games.Application.DTOs
 
         [Required(ErrorMessage = "O campo {0} deve ser preenchido.")]
         [Length(3, 100, ErrorMessage = "O campo {0} deve ter entre 3 a 100 caracteres.")]
-        public required string Nome { get; set; }
+        public string? Nome { get; set; }
 
         [MaxLength(500, ErrorMessage = "O campo {0} deve ter no máximo 500 caracteres.")]
         public string? Descricao { get; set; }
 
         [Required(ErrorMessage = "O campo {0} deve ser preenchido.")]
-        public required DateTime DataLancamento { get; set; }
+        public DateTime? DataLancamento { get; set; }
     }
 }

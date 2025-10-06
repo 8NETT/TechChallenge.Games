@@ -1,4 +1,5 @@
-﻿using Moq;
+﻿using Ardalis.Result;
+using Moq;
 using TechChallenge.Games.Application.DTOs;
 using TechChallenge.Games.Command.Domain.Aggregates;
 using TechChallenge.Games.Query.Domain.Documents;
@@ -138,8 +139,8 @@ namespace TechChallenge.Games.Application.Testes.Services
                 DataLancamento = DateTime.Today,
                 Preco = 100M
             };
-            _fixture.QueryRepository.Setup(r => r.BuscarAsync(dto.Nome, 0, 1))
-                .ReturnsAsync(Array.Empty<JogoDocument>());
+            _fixture.QueryRepository.Setup(r => r.ObterPorNomeAsync(dto.Nome))
+                .ReturnsAsync(value: null);
             _fixture.CommandRepository.Setup(r => r.SalvarAsync(It.IsAny<Jogo>()));
             _fixture.Producer.Setup(p => p.ProduceAsync(It.IsAny<JogoDTO>()))
                 .Returns(Task.CompletedTask);
@@ -149,6 +150,9 @@ namespace TechChallenge.Games.Application.Testes.Services
             var jogo = result.Value;
 
             // Assert
+            _fixture.Producer.Verify(p => p.ProduceAsync(It.IsAny<JogoDTO>()), Times.Once);
+            _fixture.CommandRepository.Verify(r => r.SalvarAsync(It.IsAny<Jogo>()), Times.Once);
+
             Assert.NotNull(result);
             Assert.True(result.IsSuccess);
             Assert.Equal(dto.Nome, jogo.Nome);
@@ -169,6 +173,9 @@ namespace TechChallenge.Games.Application.Testes.Services
             var result = await _fixture.Service.CadastrarAsync(dto);
 
             // Assert
+            _fixture.Producer.Verify(p => p.ProduceAsync(It.IsAny<JogoDTO>()), Times.Never);
+            _fixture.CommandRepository.Verify(r => r.SalvarAsync(It.IsAny<Jogo>()), Times.Never);
+
             Assert.NotNull(result);
             Assert.False(result.IsSuccess);
         }
@@ -188,8 +195,104 @@ namespace TechChallenge.Games.Application.Testes.Services
             var result = await _fixture.Service.CadastrarAsync(dto);
 
             // Assert
+            _fixture.Producer.Verify(p => p.ProduceAsync(It.IsAny<JogoDTO>()), Times.Never);
+            _fixture.CommandRepository.Verify(r => r.SalvarAsync(It.IsAny<Jogo>()), Times.Never);
+
             Assert.NotNull(result);
             Assert.False(result.IsSuccess);
+        }
+
+        [Fact]
+        public async Task AlterarDadosAsync_Sucesso()
+        {
+            // Arrange
+            var jogo = Jogo.Novo
+                .Nome("Teste")
+                .DataLancamento(DateTime.Today)
+                .Preco(100M)
+                .Build();
+            var dto = new AlterarDadosDTO
+            {
+                Id = jogo.Id,
+                Nome = "Teste Alterado",
+                DataLancamento = DateTime.Today.AddDays(-1)
+            };
+            _fixture.CommandRepository.Setup(r => r.ObterPorIdAsync(jogo.Id))
+                .ReturnsAsync(jogo);
+            _fixture.QueryRepository.Setup(r => r.ObterPorNomeAsync(dto.Nome))
+                .ReturnsAsync(value: null);
+            _fixture.CommandRepository.Setup(r => r.SalvarAsync(jogo));
+            _fixture.Producer.Setup(p => p.ProduceAsync(It.IsAny<JogoDTO>()))
+                .Returns(Task.CompletedTask);
+
+            // Act
+            var result = await _fixture.Service.AlterarDadosAsync(dto);
+            var jogoAlterado = result.Value;
+
+            // Assert
+            _fixture.CommandRepository.Verify(r => r.SalvarAsync(jogo), Times.Once);
+            _fixture.Producer.Verify(p => p.ProduceAsync(It.IsAny<JogoDTO>()), Times.Once);
+            Assert.NotNull(result);
+            Assert.True(result.IsSuccess);
+            Assert.Equal(dto.Nome, jogoAlterado.Nome);
+            Assert.Equal(dto.DataLancamento, jogoAlterado.DataLancamento);
+        }
+
+        [Fact]
+        public async Task AlterarDadosAsync_NaoLocalizado()
+        {
+            // Arrange
+            var dto = new AlterarDadosDTO
+            {
+                Id = Guid.NewGuid(),
+                Nome = "Teste Alterado",
+                DataLancamento = DateTime.Today.AddDays(-1)
+            };
+            _fixture.CommandRepository.Setup(r => r.ObterPorIdAsync(dto.Id))
+                .ReturnsAsync(value: null);
+
+            // Act
+            var result = await _fixture.Service.AlterarDadosAsync(dto);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.True(result.IsNotFound());
+        }
+
+        [Fact]
+        public async Task AlterarDadosAsync_NomeExistente()
+        {
+            // Arrange
+            var jogo = Jogo.Novo
+                .Nome("Teste")
+                .DataLancamento(DateTime.Today)
+                .Preco(100M)
+                .Build();
+            var jogoExistente = new JogoDocument
+            {
+                Nome = "Teste Alterado",
+                DataLancamento = DateTime.Today,
+                Preco = 100M,
+                Desconto = 0,
+                Valor = 100M
+            };
+            var dto = new AlterarDadosDTO
+            {
+                Id = jogo.Id,
+                Nome = "Teste Alterado",
+                DataLancamento = DateTime.Today.AddDays(-1)
+            };
+            _fixture.CommandRepository.Setup(r => r.ObterPorIdAsync(jogo.Id))
+                .ReturnsAsync(jogo);
+            _fixture.QueryRepository.Setup(r => r.ObterPorNomeAsync(dto.Nome))
+                .ReturnsAsync(jogoExistente);
+
+            // Act
+            var result = await _fixture.Service.AlterarDadosAsync(dto);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.True(result.IsConflict());
         }
     }
 }
