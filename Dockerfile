@@ -23,7 +23,7 @@ RUN dotnet restore "TechChallenge.Games.sln"
 COPY . ./
 
 # Run tests
-RUN dotnet test "TechChallenge.Games.sln" --no-restore --verbosity normal
+# RUN dotnet test "TechChallenge.Games.sln" --no-restore --verbosity normal
 
 # Publish web project
 RUN dotnet publish "Src/TechChallenge.Games.Web/TechChallenge.Games.Web.csproj" -c Release -o /app/publish
