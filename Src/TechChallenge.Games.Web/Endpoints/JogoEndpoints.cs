@@ -124,6 +124,64 @@ public static class JogoEndpoints
         .Produces((int)HttpStatusCode.Conflict)
         .Produces((int)HttpStatusCode.BadRequest);
 
+        // PUT: /jogo/preco
+        jogos.MapPut("/preco", async (AlterarPrecoDTO dto, IJogoService jogoService) =>
+        {
+            try
+            {
+                var result = await jogoService.AlterarPrecoAsync(dto);
+                if (result.IsInvalid())
+                    return Results.BadRequest(result.Errors);
+                if (result.IsNotFound())
+                    return Results.NotFound(result.Errors);
+                return Results.Ok(result.Value);
+            }
+            catch (Exception e)
+            {
+                return Results.BadRequest(new { error = e.Message });
+            }
+        })
+        .RequireAuthorization("Administrador")
+        .WithOpenApi(op => new(op)
+        {
+            OperationId = "PutPrecoAsync",
+            Summary = "Preço atualizado com sucesso",
+            Description = "Atualiza o preço de um jogo existente"
+        })
+        .Produces((int)HttpStatusCode.OK)
+        .Produces((int)HttpStatusCode.NotFound)
+        .Produces((int)HttpStatusCode.Conflict)
+        .Produces((int)HttpStatusCode.BadRequest);
+
+        // PUT: /jogo/desconto
+        jogos.MapPut("/desconto", async (AplicarDescontoDTO dto, IJogoService jogoService) =>
+        {
+            try
+            {
+                var result = await jogoService.AplicarDescontoAsync(dto);
+                if (result.IsInvalid())
+                    return Results.BadRequest(result.Errors);
+                if (result.IsNotFound())
+                    return Results.NotFound(result.Errors);
+                return Results.Ok(result.Value);
+            }
+            catch (Exception e)
+            {
+                return Results.BadRequest(new { error = e.Message });
+            }
+        })
+        .RequireAuthorization("Administrador")
+        .WithOpenApi(op => new(op)
+        {
+            OperationId = "PutDescontoAsync",
+            Summary = "Desconto aplicado com sucesso",
+            Description = "Atualiza o desconto de um jogo existente"
+        })
+        .Produces((int)HttpStatusCode.OK)
+        .Produces((int)HttpStatusCode.NotFound)
+        .Produces((int)HttpStatusCode.Conflict)
+        .Produces((int)HttpStatusCode.BadRequest);
+
         // DELETE: /jogo/{id}
         jogos.MapDelete("/{id:Guid}", async (Guid id, IJogoService jogoService) =>
         {
