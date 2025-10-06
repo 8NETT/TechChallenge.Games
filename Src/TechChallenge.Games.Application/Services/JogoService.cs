@@ -23,10 +23,13 @@ namespace TechChallenge.Games.Application.Services
             _producer = producer;
         }
 
-        public async Task<IEnumerable<JogoDTO>> ObterTodosAsync(int inicio, int tamanho)
+        public async Task<Result<IEnumerable<JogoDTO>>> ObterTodosAsync(ObterTodosDto dto)
         {
-            var jogos = await _queryRepository.ObterTodosAsync(inicio, tamanho);
-            return jogos.Select(j => j.ToDTO());
+            if (!TryValidate(dto, out var validationResult))
+                return validationResult;
+
+            var jogos = await _queryRepository.ObterTodosAsync(dto.Inicio, dto.Tamanho);
+            return jogos.Select(j => j.ToDTO()).ToArray();
         }
 
         public async Task<Result<IEnumerable<JogoDTO>>> BuscarAsync(BuscarJogoDTO dto)

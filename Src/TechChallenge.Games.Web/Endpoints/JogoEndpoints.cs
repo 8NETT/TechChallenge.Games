@@ -14,25 +14,25 @@ public static class JogoEndpoints
             .RequireAuthorization(); // substitui [Authorize] no controller
 
         // GET: /jogo
-        //jogos.MapGet("/", async (IJogoService jogoService) =>
-        //{
-        //    try
-        //    {
-        //        return Results.Ok(await jogoService.ObterTodosAsync());
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return Results.BadRequest(new { error = e.Message });
-        //    }
-        //})
-        //.WithOpenApi(op => new(op)
-        //{
-        //    OperationId = "GetJogoAsync",
-        //    Summary = "Jogos listados com sucesso",
-        //    Description = "Retorna todos os jogos cadastrados"
-        //})
-        //.Produces((int)HttpStatusCode.OK)
-        //.Produces((int)HttpStatusCode.BadRequest);
+        jogos.MapGet("/", async (IJogoService jogoService, [FromBody] ObterTodosDto dto) =>
+        {
+            try
+            {
+                return Results.Ok(await jogoService.ObterTodosAsync(dto));
+            }
+            catch (Exception e)
+            {
+                return Results.BadRequest(new { error = e.Message });
+            }
+        })
+        .WithOpenApi(op => new(op)
+        {
+            OperationId = "GetJogoAsync",
+            Summary = "Jogos listados com sucesso",
+            Description = "Retorna todos os jogos cadastrados"
+        })
+        .Produces((int)HttpStatusCode.OK)
+        .Produces((int)HttpStatusCode.BadRequest);
 
         // GET: /jogo/{id}
         jogos.MapGet("/{id:Guid}", async ([FromRoute] Guid id, IJogoService jogoService) =>
