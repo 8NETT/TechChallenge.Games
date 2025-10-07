@@ -13,6 +13,10 @@ builder.AddApplicationConfiguration();
 builder.AddAuthenticationConfiguration();
 builder.AddAuthorizationConfiguration();
 
+builder.AddOpenTelemetry();
+
+builder.AddOpenTelemetryExporters();
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.EnableAnnotations();
