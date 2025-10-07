@@ -14,11 +14,12 @@ public static class JogoEndpoints
             .RequireAuthorization(); // substitui [Authorize] no controller
 
         // GET: /jogo
-        jogos.MapGet("/", async (IJogoService jogoService, [FromBody] ObterTodosDto dto) =>
+        jogos.MapGet("/", async (IJogoService jogoService, [FromQuery] int inicio = 0, [FromQuery] int tamanho = 10) =>
         {
             try
             {
-                return Results.Ok(await jogoService.ObterTodosAsync(dto));
+
+                return Results.Ok(await jogoService.ObterTodosAsync(new ObterTodosDto { Inicio = inicio, Tamanho = tamanho}));
             }
             catch (Exception e)
             {
