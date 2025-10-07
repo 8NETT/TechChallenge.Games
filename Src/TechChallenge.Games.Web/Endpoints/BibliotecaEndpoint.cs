@@ -13,7 +13,7 @@ namespace TechChallenge.Games.Web.Endpoints
                 .RequireAuthorization(); // substitui [Authorize] no controller
 
             // GET: /biblioteca/{usuarioId}
-            bibliotecas.MapGet("/{usuarioId:Guid}", async ([FromRoute] int usuarioId, [FromServices]IBibliotecaService service) =>
+            bibliotecas.MapGet("/{usuarioId:int}", async ([FromRoute] int usuarioId, [FromServices]IBibliotecaService service) =>
             {
                 try
                 {
