@@ -70,8 +70,8 @@ namespace TechChallenge.Games.Web.Configurations
         {
             builder.Services.AddScoped<IJogoProducer, AzureEventHubProducer>(f =>
             {
-                var connectionString = builder.Configuration["AzureEventHub:ConnectionString"];
-                var eventHubName = builder.Configuration["AzureEventHub:HubName"];
+                var connectionString = builder.Configuration["JogoEventHub:ConnectionString"];
+                var eventHubName = builder.Configuration["JogoEventHub:HubName"];
 
                 if (string.IsNullOrWhiteSpace(connectionString) || string.IsNullOrWhiteSpace(eventHubName))
                     throw new InvalidOperationException("Configuração do hub de eventos não localizado no arquivo de configuração.");
