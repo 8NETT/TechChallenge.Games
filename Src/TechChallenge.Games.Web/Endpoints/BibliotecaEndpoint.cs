@@ -12,8 +12,8 @@ namespace TechChallenge.Games.Web.Endpoints
             var bibliotecas = app.MapGroup("/biblioteca")
                 .RequireAuthorization(); // substitui [Authorize] no controller
 
-            // GET: /biblioteca/{id}
-            bibliotecas.MapGet("/{id:Guid}", async ([FromRoute] int usuarioId, IBibliotecaService service) =>
+            // GET: /biblioteca/{usuarioId}
+            bibliotecas.MapGet("/{usuarioId:Guid}", async ([FromRoute] int usuarioId, [FromServices]IBibliotecaService service) =>
             {
                 try
                 {
