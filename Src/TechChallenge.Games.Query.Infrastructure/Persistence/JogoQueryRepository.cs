@@ -66,12 +66,12 @@ namespace TechChallenge.Games.Query.Infrastructure.Persistence
                 .Size(size)
                 .Query(q => q
                     .MultiMatch(mm => mm
-                        .Fields(j => j.Nome)
-                        .Fields(j => j.Descricao)
+                        .Fields(j => j.Nome, j => j.Descricao)
                         .Query(query)
                         .Fuzziness("AUTO")
                         .Operator(Operator.Or)
-                    )));
+            )));
+
 
             if (!response.IsValidResponse)
                 return Enumerable.Empty<JogoDocument>();
