@@ -39,16 +39,25 @@ namespace TechChallenge.Games.Query.Infrastructure.Consumers
                 {
                     if (@event.Data == null)
                     {
-                        _logger?.LogWarning("Dados do evento de atualização de jogos veio vazio.");
+                        _logger?.LogWarning("Dados do evento veio vazio.");
                         continue;
                     }
 
                     var json = Encoding.UTF8.GetString(@event.Data.EventBody.ToArray());
-                    var dto = JsonConvert.DeserializeObject<JogoDTO>(json);
+
+                    JogoDTO? dto;
+                    try
+                    {
+                        dto = JsonConvert.DeserializeObject<JogoDTO>(json);
+                    }
+                    catch(JsonException)
+                    {
+                        continue;
+                    }
 
                     if (dto == null)
                     {
-                        _logger?.LogWarning("Dados do evento de atualização de jogos veio vazio.");
+                        _logger?.LogWarning("Dados do evento veio vazio.");
                         continue;
                     }
 
