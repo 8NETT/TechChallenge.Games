@@ -73,16 +73,30 @@ namespace TechChallenge.Games.Web.Configurations
         {
             builder.Services.AddHostedService(s =>
             {
-                var connectionString = builder.Configuration["AzureEventHub:ConnectionString"];
-                var eventHubName = builder.Configuration["AzureEventHub:HubName"];
-                var consumerGroup = builder.Configuration["AzureEventHub:ConsumerGroup"];
+                var connectionString = builder.Configuration["JogoEventHub:ConnectionString"];
+                var eventHubName = builder.Configuration["JogoEventHub:HubName"];
+                var consumerGroup = builder.Configuration["JogoEventHub:ConsumerGroup"];
 
                 if (string.IsNullOrWhiteSpace(connectionString) ||
                     string.IsNullOrWhiteSpace(eventHubName) ||
                     string.IsNullOrWhiteSpace(consumerGroup))
-                    throw new InvalidOperationException("Configuração do hub de eventos não localizado no arquivo de configuração.");
+                    throw new InvalidOperationException("Configuração do hub de jogos não localizado no arquivo de configuração.");
 
-                return new AzureEventHubConsumer(s, consumerGroup, connectionString, eventHubName);
+                return new JogoEventHubConsumer(s, consumerGroup, connectionString, eventHubName);
+            });
+
+            builder.Services.AddHostedService(s =>
+            {
+                var connectionString = builder.Configuration["BibliotecaEventHub:ConnectionString"];
+                var eventHubName = builder.Configuration["BibliotecaEventHub:HubName"];
+                var consumerGroup = builder.Configuration["BibliotecaEventHub:ConsumerGroup"];
+
+                if (string.IsNullOrWhiteSpace(connectionString) ||
+                    string.IsNullOrWhiteSpace(eventHubName) ||
+                    string.IsNullOrWhiteSpace(consumerGroup))
+                    throw new InvalidOperationException("Configuração do hub de biblioteca não localizado no arquivo de configuração.");
+
+                return new BibliotecaEventHubConsumer(s, consumerGroup, connectionString, eventHubName);
             });
         }
     }

@@ -9,19 +9,19 @@ using TechChallenge.Games.Query.Infrastructure.Mappers;
 
 namespace TechChallenge.Games.Query.Infrastructure.Consumers
 {
-    public sealed class AzureEventHubConsumer : IHostedService, IAsyncDisposable
+    public sealed class JogoEventHubConsumer : IHostedService, IAsyncDisposable
     {
         private readonly EventHubConsumerClient _client;
         private readonly IServiceProvider _serviceProvider;
         private CancellationTokenSource? _cts;
 
-        public AzureEventHubConsumer(IServiceProvider serviceProvider, string consumerGroup, string connectionString) 
+        public JogoEventHubConsumer(IServiceProvider serviceProvider, string consumerGroup, string connectionString) 
             : this(serviceProvider, new EventHubConsumerClient(consumerGroup, connectionString)) { }
 
-        public AzureEventHubConsumer(IServiceProvider serviceProvider, string consumerGroup, string connectionString, string eventHubName)
+        public JogoEventHubConsumer(IServiceProvider serviceProvider, string consumerGroup, string connectionString, string eventHubName)
             : this(serviceProvider, new EventHubConsumerClient(consumerGroup, connectionString, eventHubName)) { }
 
-        public AzureEventHubConsumer(IServiceProvider serviceProvider, EventHubConsumerClient client)
+        public JogoEventHubConsumer(IServiceProvider serviceProvider, EventHubConsumerClient client)
         {
             _client = client;
             _serviceProvider = serviceProvider;
