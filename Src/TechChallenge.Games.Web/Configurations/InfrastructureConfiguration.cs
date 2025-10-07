@@ -53,6 +53,17 @@ namespace TechChallenge.Games.Web.Configurations
 
                 return new JogoQueryRepository(client, indexName);
             });
+
+            builder.Services.AddScoped<IBibliotecaQueryRepository, BibliotecaQueryRepository>(f =>
+            {
+                var client = f.GetRequiredService<ElasticsearchClient>();
+                var indexName = builder.Configuration["Elasticsearch:LibIndexName"];
+
+                if (string.IsNullOrWhiteSpace(indexName))
+                    throw new InvalidOperationException("Nome do índice do Elasticsearch não localizado no arquivo de configuração.");
+
+                return new BibliotecaQueryRepository(client, indexName);
+            });
         }
 
         public static void AddProducerConfiguration(this WebApplicationBuilder builder)

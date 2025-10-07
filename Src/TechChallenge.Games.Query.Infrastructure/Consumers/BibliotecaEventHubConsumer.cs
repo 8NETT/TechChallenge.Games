@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using System.Text;
 using TechChallenge.Games.Application.DTOs;
 using TechChallenge.Games.Query.Domain.Documents;
@@ -16,6 +17,12 @@ namespace TechChallenge.Games.Query.Infrastructure.Consumers
         private readonly IServiceProvider _serviceProvider;
         private readonly ILogger _logger;
         private CancellationTokenSource? _cts;
+
+        private static readonly JsonSerializerSettings jsonSettings = new JsonSerializerSettings
+        {
+            TypeNameHandling = TypeNameHandling.Objects,
+            ContractResolver = new CamelCasePropertyNamesContractResolver()
+        };
 
         public BibliotecaEventHubConsumer(IServiceProvider serviceProvider, string consumerGroup, string connectionString, ILogger logger = null) 
             : this(serviceProvider, new EventHubConsumerClient(consumerGroup, connectionString), logger) { }
@@ -45,15 +52,18 @@ namespace TechChallenge.Games.Query.Infrastructure.Consumers
 
                     var json = Encoding.UTF8.GetString(@event.Data.EventBody.ToArray());
 
-                    PagamentoDTO? dto;
+                    CommonDTO<PagamentoDTO>? commonDto;
+                    
                     try
                     {
-                        dto = JsonConvert.DeserializeObject<PagamentoDTO>(json);
+                        commonDto = JsonConvert.DeserializeObject<CommonDTO<PagamentoDTO>>(json, jsonSettings);
                     }
                     catch(JsonException)
                     {
                         continue;
                     }
+
+                    var dto = commonDto.Data;
 
                     if (dto == null)
                     {

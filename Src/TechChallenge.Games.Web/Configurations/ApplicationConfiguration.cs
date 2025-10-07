@@ -10,6 +10,7 @@ namespace TechChallenge.Games.Web.Configurations
         {
             builder.Services.AddScoped<IPasswordHasher, BCryptPasswordHasher>();
             builder.Services.AddScoped<IJogoService, JogoService>();
+            builder.Services.AddScoped<IBibliotecaService, BibliotecaService>();
         }
     }
 }

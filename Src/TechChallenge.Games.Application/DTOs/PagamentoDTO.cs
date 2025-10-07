@@ -1,4 +1,5 @@
-﻿namespace TechChallenge.Games.Application.DTOs
+﻿
+namespace TechChallenge.Games.Application.DTOs
 {
     public class PagamentoDTO
     {
