@@ -1,6 +1,7 @@
 ﻿using Azure.Messaging.EventHubs.Consumer;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System.Text;
 using TechChallenge.Games.Application.DTOs;
@@ -13,18 +14,20 @@ namespace TechChallenge.Games.Query.Infrastructure.Consumers
     {
         private readonly EventHubConsumerClient _client;
         private readonly IServiceProvider _serviceProvider;
+        private readonly ILogger _logger;
         private CancellationTokenSource? _cts;
 
-        public BibliotecaEventHubConsumer(IServiceProvider serviceProvider, string consumerGroup, string connectionString) 
-            : this(serviceProvider, new EventHubConsumerClient(consumerGroup, connectionString)) { }
+        public BibliotecaEventHubConsumer(IServiceProvider serviceProvider, string consumerGroup, string connectionString, ILogger logger = null) 
+            : this(serviceProvider, new EventHubConsumerClient(consumerGroup, connectionString), logger) { }
 
-        public BibliotecaEventHubConsumer(IServiceProvider serviceProvider, string consumerGroup, string connectionString, string eventHubName)
-            : this(serviceProvider, new EventHubConsumerClient(consumerGroup, connectionString, eventHubName)) { }
+        public BibliotecaEventHubConsumer(IServiceProvider serviceProvider, string consumerGroup, string connectionString, string eventHubName, ILogger logger = null)
+            : this(serviceProvider, new EventHubConsumerClient(consumerGroup, connectionString, eventHubName), logger) { }
 
-        public BibliotecaEventHubConsumer(IServiceProvider serviceProvider, EventHubConsumerClient client)
+        public BibliotecaEventHubConsumer(IServiceProvider serviceProvider, EventHubConsumerClient client, ILogger logger = null)
         {
             _client = client;
             _serviceProvider = serviceProvider;
+            _logger = logger;
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
@@ -35,16 +38,25 @@ namespace TechChallenge.Games.Query.Infrastructure.Consumers
                 await foreach (var @event in _client.ReadEventsAsync(cancellationToken))
                 {
                     if (@event.Data == null)
+                    {
+                        _logger?.LogWarning("Dados dos evento de pagamento veio vazio.");
                         continue;
+                    }
 
                     var json = Encoding.UTF8.GetString(@event.Data.EventBody.ToArray());
                     var dto = JsonConvert.DeserializeObject<PagamentoDTO>(json);
 
                     if (dto == null)
+                    {
+                        _logger?.LogWarning("Dados dos evento de pagamento veio vazio.");
                         continue;
+                    }
 
                     if (dto.Status != 0) // Ignora pagamentos que não foram aprovados
+                    {
+                        _logger?.LogTrace($"Pagamento {dto.OrderId} ignorado por não estar aprovado.");
                         continue;
+                    }
 
                     using var scope = _serviceProvider.CreateScope();
                     var bibliotecaRepository = scope.ServiceProvider.GetRequiredService<IBibliotecaQueryRepository>();
@@ -52,18 +64,28 @@ namespace TechChallenge.Games.Query.Infrastructure.Consumers
 
                     var biblioteca = await bibliotecaRepository.ObterPorUsuarioIdAsync(dto.UserId);
                     if (biblioteca == null)
+                    {
                         biblioteca = new BibliotecaDocument { UsuarioId = dto.UserId };
+                        _logger?.LogTrace($"Nova biblioteca criada para o usuário com ID {dto.UserId}.");
+                    }
 
                     var jogo = await jogoRepository.ObterPorIdAsync(dto.JogoId);
                     if (jogo == null)
+                    {
+                        _logger?.LogError($"Jogo {dto.JogoId} não localizado para o pagamento {dto.OrderId}.");
                         continue;
+                    }
 
                     if (biblioteca.Jogos.Contains(jogo.Id)) // se o jogo já existe na biblioteca, ignora
+                    {
+                        _logger?.LogError($"Usuário {dto.UserId} já possui o jogo {dto.JogoId}.");
                         continue;
+                    }
 
                     biblioteca.Jogos.Add(jogo.Id);
-
                     await bibliotecaRepository.UpsertAsync(biblioteca);
+
+                    _logger?.LogInformation($"Jogo {jogo.Id} adicionado na biblioteca do usuário {biblioteca.UsuarioId}.");
                 }
             }, _cts.Token);
 
