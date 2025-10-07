@@ -28,16 +28,17 @@ namespace TechChallenge.Games.Application.Testes.Services
                 Desconto = 0,
                 Valor = 100M
             };
-            _fixture.QueryRepository.Setup(r => r.ObterTodosAsync(0, 10))
+            var dto = new ObterTodosDto { Inicio = 0, Tamanho = 10 };
+            _fixture.QueryRepository.Setup(r => r.ObterTodosAsync(dto.Inicio, dto.Tamanho))
                 .ReturnsAsync([jogo]);
 
             // Act
-            var result = await _fixture.Service.ObterTodosAsync(0, 10);
+            var result = await _fixture.Service.ObterTodosAsync(dto);
 
             // Assert
             Assert.NotNull(result);
-            Assert.NotEmpty(result);
-            Assert.Equal(jogo.Id, result.First().Id);
+            Assert.NotEmpty(result.Value);
+            Assert.Equal(jogo.Id, result.Value.First().Id);
         }
 
         [Fact]
