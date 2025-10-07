@@ -31,5 +31,6 @@ app.UseAuthorization();
 
 app.MapJogoEndpoints();
 app.MapSearchEndpoints();
+app.MapBibliotecaEndpoints();
 
 app.Run();
